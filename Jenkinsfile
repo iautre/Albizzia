@@ -18,7 +18,7 @@ pipeline {
     }
     stage('构建 Docker 镜像') {
       steps {
-        sh "docker build -f ${env.DOCKERFILE_PATH} -t ${env.CODING_DOCKER_IMAGE_NAME}:${env.DOCKER_IMAGE_VERSION} ${DOCKER_BUILD_CONTEXT}"
+        sh "docker build -f ${DOCKERFILE_PATH} -t ${CODING_DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_VERSION} ${DOCKER_BUILD_CONTEXT}"
       }
     }
     stage('构建镜像并推送到 CODING Docker 制品库') {
@@ -28,7 +28,7 @@ pipeline {
             "${CCI_CURRENT_WEB_PROTOCOL}://${CODING_DOCKER_REG_HOST}",
             "${CODING_ARTIFACTS_CREDENTIALS_ID}"
           ) {
-            docker.image("${CODING_DOCKER_IMAGE_NAME}:${env.DOCKER_IMAGE_VERSION}").push()
+            docker.image("${CODING_DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_VERSION}").push()
           }
         }
 
@@ -71,7 +71,11 @@ pipeline {
               command: "docker rm -f ${DOCKER_IMAGE_NAME} | true",
               sudo: false,
             )
-
+            sshCommand(
+              remote: remoteConfig,
+              command: "docker rmi  `docker images | grep ${CODING_DOCKER_REG_HOST}/${CODING_DOCKER_IMAGE_NAME} | awk '{print $3}'`",
+               sudo: false,
+            )
             // DOCKER_IMAGE_VERSION 中涉及到 GIT_LOCAL_BRANCH / GIT_TAG / GIT_COMMIT 的环境变量的使用
             // 需要在本地完成拼接后，再传入到远端服务器中使用
             DOCKER_IMAGE_URL = sh(

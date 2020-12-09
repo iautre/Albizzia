@@ -11,7 +11,7 @@
             </template>
         </span>
       </div>
-      <div class="text">{{postData.content}}</div>
+      <div class="text" v-html="$md.render(postData.content)"></div>
     </div>
 </template>
 <script>

@@ -39,8 +39,12 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/markdownit'
   ],
+  markdownit: {
+    injected: true
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     //publicPath: 'https://c.autre.cn',

@@ -4,8 +4,8 @@
   "private": true,
   "config": {
     "nuxt": {
-        "host": "0.0.0.0",
-        "port": "3000"
+      "host": "0.0.0.0",
+      "port": "3000"
     }
   },
   "scripts": {
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.3",
+    "@nuxtjs/markdownit": "^1.2.10",
     "@nuxtjs/sitemap": "^2.4.0",
     "ant-design-vue": "^1.6.5",
     "axios": "^0.21.0",

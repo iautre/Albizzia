@@ -71,9 +71,14 @@ pipeline {
               command: "docker rm -f ${DOCKER_IMAGE_NAME} | true",
               sudo: false,
             )
+            
+            DOCKER_IMAGE_NOTAG = sh(
+              script: "echo ${CODING_DOCKER_REG_HOST}/${CODING_DOCKER_IMAGE_NAME}",
+              returnStdout: false
+            )
             sshCommand(
               remote: remoteConfig,
-              command: "docker rmi  `docker images | grep ${CODING_DOCKER_REG_HOST}/${CODING_DOCKER_IMAGE_NAME} | awk '{print $3}'`",
+              command: "docker rmi  `docker images | grep ${DOCKER_IMAGE_NOTAG} | awk '{print $3}'`",
                sudo: false,
             )
             // DOCKER_IMAGE_VERSION 中涉及到 GIT_LOCAL_BRANCH / GIT_TAG / GIT_COMMIT 的环境变量的使用

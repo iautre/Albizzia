@@ -10,4 +10,4 @@ RUN set -x \
 
 #开放端口
 EXPOSE 3000
-CMD ["npm","start","daemon off;"]
+CMD ["npm","start"]

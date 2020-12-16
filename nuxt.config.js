@@ -1,7 +1,8 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Autre Coding',
+    titleTemplate: '%s - Autre Coding',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,7 +25,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '@/plugins/antd-ui',
-    '~/plugins/axios',
+    //'~/plugins/axios',
     '~/plugins/baiduGa'
   ],
 
@@ -42,6 +43,9 @@ export default {
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit'
   ],
+  axios: {
+    baseURL: 'https://api.c.autre.cn', // Used as fallback if no runtime config is provided
+  },
   markdownit: {
     injected: true
   },

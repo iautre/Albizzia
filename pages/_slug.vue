@@ -2,7 +2,7 @@
   <div>
       <div class="meta">
         <span><a-icon type="calendar" style="margin-right: 2px" />
-            {{postData.date}}</span>
+            {{postData.modified}}</span>
         <span><a-icon type="tags" style="margin-right: 2px" />
             {{postData.categories}}
             <template v-for="tag in postData.tags">
@@ -31,14 +31,27 @@ export default {
   mounted: function(){
     
   },
+  head() {
+    return {
+      title: this.postData.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.postData.description
+        }
+      ]
+    }
+  },
   async asyncData ({store, route, $axios, params, payload }) {
-    var res = payload
+    let  data = {}
     //store.dispatch("setCurren", 'about')
     //if(!payload){
-      var data = await $axios.$get(`/p/info?slug=${params.slug}`)
-      res = data.data
-   // }
-    return {postData: res }
+    let res = await $axios.$get(`/a/info?slug=${params.slug}`)
+    if(res.code == 0){
+      data = res.data
+    }
+    return {postData: data }
   }
 }
 </script>

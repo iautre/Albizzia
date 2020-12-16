@@ -38,13 +38,7 @@ export default {
   data() {
     return {
       postData: [],
-      temp: {},
-      actions: [
-        { type: 'star-o', text: '156' },
-        { type: 'like-o', text: '156' },
-        { type: 'message', text: '2' },
-      ]
-     
+      
     }
   },
   computed: {
@@ -56,14 +50,27 @@ export default {
   mounted: function(){
     
   },
+  head() {
+    return {
+      title: '首页',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '技术分享'
+        }
+      ]
+    }
+  },
   async asyncData ({store, route, $axios, params, payload }) {
-    var res = payload
+    let data = []
     //store.dispatch("setCurren", 'about')
     //if(!payload){
-      var data = await $axios.$get(`/a/list?page=1`)
-      res = data.data
-   // }
-    return {postData: res }
+    let res = await $axios.$get(`/a/list?page=1`)
+    if(res.code == 0){
+        data = res.data
+    }
+    return {postData: data }
   }
 }
 </script>

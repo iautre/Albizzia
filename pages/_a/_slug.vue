@@ -3,12 +3,18 @@
       <h1>{{postData.title}}</h1>
       <div class="meta">
         <span><a-icon type="calendar" style="margin-right: 2px" />
-            {{postData.modified}}</span>
-        <span><a-icon type="tags" style="margin-right: 2px" />
+            {{postData.modified | dataFormat("yyyy-MM-dd")}}</span>
+        <span><a-icon type="tags" style="margin-right: 2px;margin-left: 8px;" />
             {{postData.categories}}
             <template v-for="tag in postData.tags">
                 {{ tag }}
             </template>
+        </span>
+        <span ><a-icon @click="like" :theme="iconTheme" type="star" style="margin-right: 2px;margin-left: 8px;" />
+            {{postData.likes}}
+        </span>
+        <span ><a-icon type="message" style="margin-right: 2px;margin-left: 8px;" />
+            {{postData.comments}}
         </span>
       </div>
       <div class="text" v-html="$md.render(postData.content)"></div>
@@ -22,15 +28,21 @@ export default {
   },
   data() {
     return {
-      postData: {}
-      
+      postData: {},
+      iconTheme: "outlined"
     };
   },
   computed: {
     
   },
+  methods: {
+    like(){
+      this.iconTheme = "filled"
+      this.$axios.$get(`/a/like?slug=${this.$route.params.slug}`)
+    }
+  },
   mounted: function(){
-    
+    this.$axios.$get(`/a/view?slug=${this.$route.params.slug}`)
   },
    head() {
     return {

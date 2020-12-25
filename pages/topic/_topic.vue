@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       postData: [],
-      
+      topicInfo: {}
     }
   },
   computed: {
@@ -52,12 +52,12 @@ export default {
   },
   head() {
     return {
-      title: '首页',
+      title: this.topicInfo.name,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: '技术分享'
+          content: this.topicInfo.docker || this.topicInfo.name
         }
       ]
     }
@@ -66,7 +66,7 @@ export default {
     let data = []
     //store.dispatch("setCurren", 'about')
     //if(!payload){
-    let res = await $axios.$get(`/a/list?page=1`)
+    let res = await $axios.$get(`/a/list?page=1&topic=${params.topic}`)
     if(res.code == 0){
         data = res.data
     }

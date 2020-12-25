@@ -26,7 +26,8 @@ export default {
   plugins: [
     '@/plugins/antd-ui',
     //'~/plugins/axios',
-    '~/plugins/baiduGa'
+    '~/plugins/baiduGa',
+    '~/plugins/utils'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -1,7 +1,7 @@
 <template>
   <a-layout-header class="header">
     <a-menu v-model="current" mode="horizontal" class="menu">
-      <a-menu-item key="/" class="home"><router-link to="/">AutreC</router-link></a-menu-item>
+      <a-menu-item key="/" class="home"><router-link to="/">AutreCoding</router-link></a-menu-item>
       <template  v-for="nav in navs">
         <a-menu-item :key="nav.link" v-if="!nav.items"><router-link :to="nav.link"><a-icon :type="nav.icon" />{{nav.title}}</router-link></a-menu-item>
         <a-sub-menu v-if="nav.items">

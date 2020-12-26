@@ -2,7 +2,7 @@
   <div>
     <template v-for="topic in topics">
         <a-tag color="pink" class="tags">
-          <router-link :to="topic.slug">{{topic.name}}</router-link>
+          <router-link :to="topic.path">{{topic.name}}</router-link>
         </a-tag>
       </template>
   </div>  

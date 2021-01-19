@@ -81,7 +81,7 @@ pipeline {
 
             sshCommand(
               remote: remoteConfig,
-              command: "docker run -d --name ${DOCKER_IMAGE_NAME} --network=docker_net_aliyun --network-alias=${DOCKER_IMAGE_NAME} --restart=always ${DOCKER_IMAGE_URL}",
+              command: "docker run -d --cpus 1 -m 256m --name ${DOCKER_IMAGE_NAME} --network=docker_net_aliyun --network-alias=${DOCKER_IMAGE_NAME} --restart=always ${DOCKER_IMAGE_URL}",
               sudo: false,
             )
 

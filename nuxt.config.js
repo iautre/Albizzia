@@ -1,3 +1,5 @@
+const cheerio = require('cheerio')
+const path = require('path')
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -54,9 +56,19 @@ export default {
   build: {
     //publicPath: 'https://c.autre.cn',
     extend (config, ctx) {
+      config.resolve.alias['@ant-design/icons/lib/dist.js$'] = path.resolve(__dirname, './plugins/antd-icons.js') // 引入需要的
     },
-    analyze: true,
+    //analyze: true,
     //将css打包引用
-    extractCSS: { allChunks: true }
+    extractCSS: { allChunks: true },
+  },
+  hooks: {
+    'render:route': (url, result) => {
+      this.$ = cheerio.load(result.html,{decodeEntities: false});
+      //由于window.__nuxt__总是位于body中的第一个script中，
+      //所以我移除了body中第一个脚本标签
+      this.$(`body script`).eq(0).remove();
+      result.html = this.$.html()
+    }
   }
 }

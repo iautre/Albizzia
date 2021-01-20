@@ -23,7 +23,7 @@
           :src="item.image"
         />
         <a-list-item-meta >
-          <router-link slot="title"  :to="item.path">{{ item.title }}</router-link>
+          <router-link slot="title" :to="item.path">{{ item.title }}</router-link>
         </a-list-item-meta>
       </a-list-item>
     </a-list>

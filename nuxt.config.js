@@ -8,6 +8,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'keywords', content: 'AutreC,autre,AutreCoding'},
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
       { name: 'baidu-site-verification', content: 'code-jeOSFvD6Qk'}
     ],
@@ -15,7 +16,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      {src: 'https://hm.baidu.com/hm.js?fee73898938831e6e404ff50af32104a',defer: true}
+      {src: 'https://hm.baidu.com/hm.js?fee73898938831e6e404ff50af32104a',defer: true, ssr: false}
     ]
   },
 

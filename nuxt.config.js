@@ -15,7 +15,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      {src: 'https://hm.baidu.com/hm.js?409a7a374fbcec1acc64716522171ae2'}
+      {src: 'https://hm.baidu.com/hm.js?fee73898938831e6e404ff50af32104a',defer: true}
     ]
   },
 
@@ -56,7 +56,7 @@ export default {
   build: {
     //publicPath: 'https://c.autre.cn',
     extend (config, ctx) {
-      config.resolve.alias['@ant-design/icons/lib/dist.js$'] = path.resolve(__dirname, './plugins/antd-icons.js') // 引入需要的
+      //config.resolve.alias['@ant-design/icons/lib/dist$'] = path.resolve(__dirname, './plugins/antd-icons.js') // 引入需要的
     },
     //analyze: true,
     //将css打包引用

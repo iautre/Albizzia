@@ -54,6 +54,8 @@ export default {
   build: {
     //publicPath: 'https://c.autre.cn',
     extend (config, ctx) {
-    }
+    },
+    //将css打包引用
+    extractCSS: { allChunks: true }
   }
 }

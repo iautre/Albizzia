@@ -55,6 +55,7 @@ export default {
     //publicPath: 'https://c.autre.cn',
     extend (config, ctx) {
     },
+    analyze: true,
     //将css打包引用
     extractCSS: { allChunks: true }
   }

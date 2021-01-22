@@ -16,7 +16,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      {src: 'https://hm.baidu.com/hm.js?be01b60a874f8ab30e0155f0d04cb18d', defer: true, isSSR: false}
+      {src: 'https://hm.baidu.com/hm.js?be01b60a874f8ab30e0155f0d04cb18d', defer: true}
     ]
   },
 

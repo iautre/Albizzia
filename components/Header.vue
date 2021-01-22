@@ -15,7 +15,7 @@
         </a-sub-menu>
       </template>
       <a-menu-item key="about" class="right">
-        <router-link to="/about/">关于</router-link>
+        <router-link to="/about">关于</router-link>
       </a-menu-item>
     </a-menu>
   </a-layout-header>

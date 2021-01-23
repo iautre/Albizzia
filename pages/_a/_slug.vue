@@ -39,6 +39,7 @@ export default {
     like(){
       this.iconTheme = "filled"
       this.$axios.$get(`/a/like?slug=${this.$route.params.slug}`)
+      this.postData.likes ++
     }
   },
   mounted: function(){

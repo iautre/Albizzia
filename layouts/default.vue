@@ -15,11 +15,23 @@
               src="https://img.alicdn.com/tfs/TB1Gc3zmAL0gK0jSZFxXXXWHVXa-259-194.jpg"
             /></a>
           </a-card>
+          <a-card hoverable>
+            <img
+              width="100%"
+              alt="AutreCoding"
+              src="qrcode_for_gh_0f5d4a067e90_258.jpg"
+            />
+            <a-card-meta title=" ">
+               <template slot="description">
+                   扫一扫 关注公众号<br/>AutreCoding
+                </template>
+            </a-card-meta>
+          </a-card>
           <a-card >
             <template v-for="tag in tags">
               <a-tag color="pink">
-              {{tag.name}}
-            </a-tag>
+                {{tag.name}}
+              </a-tag>
             </template>
             <p>Card content</p>
             <p>Card content</p>

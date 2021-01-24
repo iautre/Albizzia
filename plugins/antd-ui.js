@@ -20,7 +20,8 @@ import {
     Spin,
     Tag,
     PageHeader,
-    Collapse 
+    Collapse,
+    Popover,
     } from 'ant-design-vue'
 
 //Vue.use(Antd)
@@ -43,4 +44,5 @@ Vue.use(Slider)
 Vue.use(Spin)
 Vue.use(Tag)
 Vue.use(PageHeader)
-Vue.use(Collapse )
+Vue.use(Collapse)
+Vue.use(Popover)

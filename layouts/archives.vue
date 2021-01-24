@@ -23,7 +23,7 @@
             />
             <a-card-meta title=" ">
                <template slot="description">
-                   扫一扫 关注公众号<br/>AutreCoding
+                  「微信」扫一扫 AutreCoding
                 </template>
             </a-card-meta>
           </a-card>

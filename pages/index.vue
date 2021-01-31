@@ -68,7 +68,7 @@ export default {
     //if(!payload){
     let res = await $axios.$get(`/a/list?page=1`)
     if(res.code == 0){
-        data = res.data
+        data = res.data.articles
     }
     return {postData: data }
   }

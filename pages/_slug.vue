@@ -2,7 +2,7 @@
   <div>
       <div class="meta">
         <span><a-icon type="calendar" style="margin-right: 2px" />
-            {{postData.modified | dataFormat("yyyy-MM-dd")}}</span>
+            {{postData.issued | dataFormat("yyyy-MM-dd")}}</span>
         <span><a-icon type="tags" style="margin-right: 2px" />
             {{postData.categories}}
             <template v-for="tag in postData.tags">

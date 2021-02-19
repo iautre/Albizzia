@@ -22,6 +22,7 @@ import {
     PageHeader,
     Collapse,
     Popover,
+    Space
     } from 'ant-design-vue'
 
 //Vue.use(Antd)
@@ -46,3 +47,4 @@ Vue.use(Tag)
 Vue.use(PageHeader)
 Vue.use(Collapse)
 Vue.use(Popover)
+Vue.use(Space)

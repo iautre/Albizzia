@@ -1,5 +1,6 @@
 // 全局方法
 import Vue from 'vue'
+import qrcode from 'qrcode'
 
 let dataFormat = function(e, fmt){
     Date.prototype.Format = function(fmt) { 
@@ -31,11 +32,11 @@ let dataFormat = function(e, fmt){
 let utils = {
     install(Vue) {
         Vue.prototype.$dataFormat = dataFormat
+        Vue.prototype.$QRCode = qrcode
         Vue.filter('dataFormat', dataFormat)
     }
 }
 Vue.use(utils);
-
 
 // 这里是 为了在 asyncData 方法中使用
 export default ({ app }, inject) => {

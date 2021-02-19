@@ -7,7 +7,7 @@
       <a-list-item slot="renderItem" key="item.title" slot-scope="item, index">
         <template  slot="actions">
           <span ><a-icon type="calendar" style="margin-right: 8px" />
-            {{item.modified | dataFormat("yyyy-MM-dd")}}
+            {{item.issued | dataFormat("yyyy-MM-dd")}}
           </span><span ><a-icon type="star" style="margin-right: 8px" />
             {{item.likes}}
           </span><span ><a-icon type="message" style="margin-right: 8px" />

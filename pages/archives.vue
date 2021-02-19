@@ -4,7 +4,7 @@
           <a-collapse-panel :key="key" :header="key">
             <a-list size="small" :data-source="value">
               <a-list-item slot="renderItem" slot-scope="item, index">
-                <router-link :to="item.path">{{ item.modified | dataFormat("yyyy-MM-dd") }} . {{ item.title }}</router-link>
+                <router-link :to="item.path">{{ item.issued | dataFormat("yyyy-MM-dd") }} . {{ item.title }}</router-link>
               </a-list-item>
             </a-list>
           </a-collapse-panel>
@@ -54,7 +54,7 @@ export default {
     if(res.code == 0){
       for(let index in res.data){
         let item = res.data[index]
-        let dateStr = app.$dataFormat(item.modified, "yyyy")
+        let dateStr = app.$dataFormat(item.issued, "yyyy")
         if(index == 0)firstPostYear = dateStr
         if(!data[dateStr])data[dateStr]=[]
         data[dateStr].push(item)

@@ -19,7 +19,7 @@
             <img
               width="100%"
               alt="AutreCoding"
-              src="qrcode_for_gh_0f5d4a067e90_258.jpg"
+              src="/qrcode_for_gh_0f5d4a067e90_258.jpg"
             />
             <a-card-meta title=" ">
                <template slot="description">

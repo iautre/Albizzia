@@ -23,7 +23,8 @@ let dataFormat = function(e, fmt){
       }
       return fmt; 
     } 
-    let date = new Date(parseInt(e)*1000)
+    //let date = new Date(parseInt(e)*1000)
+    let date = new Date(e)
     return date.Format(fmt)
   }
 

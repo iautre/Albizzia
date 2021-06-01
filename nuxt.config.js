@@ -48,7 +48,7 @@ export default {
     '@nuxtjs/markdownit'
   ],
   axios: {
-    baseURL: 'https://cloud.autre.cn/coding', // Used as fallback if no runtime config is provided
+    baseURL: 'https://coding.autre.cn/api', // Used as fallback if no runtime config is provided
   },
   markdownit: {
     injected: true

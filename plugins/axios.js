@@ -1,14 +1,13 @@
-export default function (app) {
-  let axios = app.$axios; 
- // 基本配置
-  axios.defaults.baseURL = 'https://api.c.autre.cn2'
+export default function ({ $axios, redirect }) {
+  $axios.setHeader('Client', '2d1f5385e831422eb16981a84befc910')
+  $axios.onRequest(config => {
+    console.log('Making request to ' + config.url)
+  })
 
-  // 请求回调
-  axios.onRequest(config => {})
-
-  // 返回回调
-  axios.onResponse(res => {})
-
-  // 错误回调
-  axios.onError(error => {})
+  $axios.onError(error => {
+    const code = parseInt(error.response && error.response.status)
+    if (code === 400) {
+      redirect('/400')
+    }
+  })
 }

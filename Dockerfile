@@ -1,5 +1,8 @@
 FROM autrec/node
 
+ENV BASE_URL http://coding-server
+ENV BROWSER_BASE_URL https://coding.autre.cn/api
+
 COPY . /var/app/
 
 WORKDIR /var/app

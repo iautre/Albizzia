@@ -1,6 +1,6 @@
 FROM autrec/node
 
-ENV BASE_URL http://coding-server
+ENV BASE_URL http://coding-server:8080
 ENV BROWSER_BASE_URL https://coding.autre.cn/api
 
 COPY . /var/app/

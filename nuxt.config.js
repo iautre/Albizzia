@@ -47,12 +47,9 @@ export default {
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit'
   ],
-  axios: {
-    baseURL: process.env.BASE_URL, // Used as fallback if no runtime config is provided
-  },
   publicRuntimeConfig: {
     axios: {
-      browserBaseURL: process.env.BROWSER_BASE_URL
+      baseURL: process.env.BROWSER_BASE_URL
     }
   },
   privateRuntimeConfig: {
@@ -74,12 +71,12 @@ export default {
     extractCSS: { allChunks: true },
   },
   hooks: {
-    'render:route': (url, result) => {
-      this.$ = cheerio.load(result.html,{decodeEntities: false});
+    //'render:route': (url, result) => {
+    //  this.$ = cheerio.load(result.html,{decodeEntities: false});
       //由于window.__nuxt__总是位于body中的第一个script中，
       //所以我移除了body中第一个脚本标签
-      this.$(`body script`).eq(0).remove();
-      result.html = this.$.html()
-    }
+    //  this.$(`body script`).eq(0).remove();
+    //  result.html = this.$.html()
+    //}
   }
 }

@@ -5,6 +5,11 @@ export default function ({ $axios, redirect }) {
   })
 
   $axios.onError(error => {
+    console.log('*1************************************************************************')
+    console.log(String(error))
+    console.log('*2************************************************************************')
+    console.log(JSON.stringify(error))
+    console.log('*3************************************************************************')
     const code = parseInt(error.response && error.response.status)
     console.log(error)
     if (code === 400) {

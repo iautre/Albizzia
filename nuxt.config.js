@@ -30,7 +30,7 @@ export default {
     '@/plugins/antd-ui',
     '@/plugins/axios',
     '@/plugins/baiduGa',
-    '@/plugins/utils'
+    '@/plugins/utils',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

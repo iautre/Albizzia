@@ -66,6 +66,7 @@ export default {
     let data = []
     //store.dispatch("setCurren", 'about')
     //if(!payload){
+      
     let res = await $axios.$get(`/a/list?page=1`)
     if(res.code == 0){
         data = res.data.articles

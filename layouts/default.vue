@@ -1,109 +1,60 @@
 <template>
-  <a-layout>
-    <Header />
-    <a-layout-content class="container">
-      <a-layout>
-        <a-layout-content class="content">
-          <nuxt />
-        </a-layout-content>
-        <a-layout-sider theme="light" width="260" class="sider">
-          <a-card hoverable >
-            <a slot="cover" target="_blank" href="https://promotion.aliyun.com/ntms/act/enterprise-discount.html?userCode=o5ofeqxc">
-            <img
-              width="238"
-              alt="阿里云"
-              src="https://img.alicdn.com/tfs/TB1Gc3zmAL0gK0jSZFxXXXWHVXa-259-194.jpg"
-            /></a>
-          </a-card>
-          <a-card hoverable>
-            <img
-              width="100%"
-              alt="AutreCoding"
-              src="/qrcode_for_gh_0f5d4a067e90_258.jpg"
-            />
-            <a-card-meta title=" ">
-               <template slot="description">
-                   「微信」扫一扫 AutreCoding
-                </template>
-            </a-card-meta>
-          </a-card>
-          <a-card >
-            <template v-for="tag in tags">
-              <a-tag color="pink">
-                {{tag.name}}
-              </a-tag>
-            </template>
-            <p>Card content</p>
-            <p>Card content</p>
-          </a-card>
-        </a-layout-sider>
-      </a-layout>
-    </a-layout-content>
-    <Footer />
-    <a-back-top />
-  </a-layout>
+  <div id="autrecoding">
+    <n-notification-provider>
+      <n-config-provider :date-locale="dateLocale">
+        <n-layout style="height: 100vh">
+          <n-layout-header style="
+          height: 56px;
+          line-height: 56px;
+          border-bottom: 1px solid var(--n-border-color);
+        ">
+            <Header />
+          </n-layout-header>
+          <n-layout has-sider position="absolute" style="top: 56px">
+            <n-layout-sider :width="348" show-trigger="bar" :collapsed-width="0" :native-scrollbar="false" style="border-right: 1px solid var(--n-border-color);"
+              :show-collapsed-content="false" content-style="padding: 24px 24px 24px 24px;">
+              <Sider />
+            </n-layout-sider>
+            <n-layout :native-scrollbar="false">
+              <n-layout-content content-style="padding: 24px;min-height: calc(100vh - 120px);">
+                <slot />
+              </n-layout-content>
+              <n-layout-footer>
+                <Footer />
+              </n-layout-footer>
+              <n-back-top :right="100">
+                <n-icon size="18">
+                  <UpOutlined />
+                </n-icon>
+              </n-back-top>
+            </n-layout>
+          </n-layout>
+        </n-layout>
+      </n-config-provider>
+      </n-notification-provider>
+</div>
 </template>
-<script>
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-export default {
-  name: 'default',
-  components: {
-    Header,
-    Footer
-  },
-  data() {
-    return {
-      tags:[]
-      
-    };
-  },
-   
-}
+<script lang="ts" setup>
+import { h, ref, Component, computed } from "vue";
+import { NIcon, useOsTheme, darkTheme, dateZhCN } from "naive-ui";
+import type { MenuOption } from "naive-ui";
+import hljs from "highlight.js/lib/core";
+import {
+  UpOutlined
+} from '@vicons/antd'
+const dateLocale = dateZhCN;
+const osThemeRef = useOsTheme();
+// const theme = computed(() => (osThemeRef.value === 'dark' ? darkTheme : null))
+const theme = computed(() => darkTheme);
 </script>
 <style>
-body{
-  background: #f0f2f5;
-}
-h1{
-  font-size: 22px;
-}
-h2{
-  font-size: 20px;
-}
-h3{
-  font-size: 18px;
-}
-h4{
-  font-size: 16px;
-}
-.right{
-  float: right;
-}
-.container{
-  max-width: 960px;
-  margin: 16px auto;
-  width: 100%;
-}
-
-.content{
-  padding: 16px; 
-  min-height: 280px;
-  background: #fff;
-  max-width: 700px;
-}
-
-.sider{
-  width: 260px;
-  background: #f0f2f5;
-  padding-left: 20px;
-}
-.ant-card{
-  margin-bottom: 16px;
-}
-@media (max-width: 700px){
-  .sider {
-      display: none; 
-  }
+a {
+  color: #333;
+  outline: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
 }
 </style>

@@ -1,73 +1,67 @@
 <template>
-  <a-layout-header class="header">
-    <a-menu v-model="current" mode="horizontal" class="menu">
-      <a-menu-item key="/" class="home"><router-link to="/">AutreCoding</router-link></a-menu-item>
-      <template  v-for="nav in navs">
-        <a-menu-item :key="nav.link" v-if="!nav.items"><router-link :to="nav.link"><a-icon :type="nav.icon" />{{nav.title}}</router-link></a-menu-item>
-        <a-sub-menu v-if="nav.items">
-          <span slot="title" class="submenu-title-wrapper"
-            ><a-icon :type="nav.icon" />{{nav.title}}</span>
-            <template v-for="item in nav.items">
-            <a-menu-item :key="item.link">
-              <router-link :to="item.link">{{item.title}}</router-link>
-            </a-menu-item>
-            </template>
-        </a-sub-menu>
-      </template>
-      <a-menu-item key="about" class="right">
-        <router-link to="/about">关于</router-link>
-      </a-menu-item>
-    </a-menu>
-  </a-layout-header>
+  <n-space justify="space-between">
+    <n-space>
+      <!-- <div style="width:348px;"></div> -->
+      <n-menu v-model:value="activeKey" mode="horizontal" :options="menuOptions" />
+    </n-space>
+    <n-space>
+      <div style="margin-right: 24px;">
+        <n-input round placeholder="github" :on-input="inputText" @keyup.enter="goto">
+          <template #suffix>
+            <n-icon :component="SearchOutlined" />
+          </template>
+        </n-input>
+      </div>
+    </n-space>
+  </n-space>
 </template>
-<script>
-export default {
-  name: 'Header',
-  data() {
-    return {
-      current: [],
-      
-    }
+<script lang="ts" setup >
+import { h, ref, Component } from 'vue'
+import type { MenuOption } from 'naive-ui'
+import { NIcon } from 'naive-ui'
+import {
+  BookOutlined,
+  TagsOutlined,
+  SearchOutlined
+} from '@vicons/antd'
+import { NuxtLink } from '~~/.nuxt/components'
+const renderIcon = (icon: Component) => {
+  return () => h(NIcon, null, { default: () => h(icon) })
+}
+const renderLabelN = (label:string, path:string) =>{
+  return () => h(NuxtLink,{to:{path:path}},{default: ()=> label})
+}
+const renderLabelA = (label:string, path:string) =>{
+  return () => h('a',{href:path},label)
+}
+const renderLabel = renderLabelA
+const activeKey = useMenuActiveKey(useRoute().path)
+const menuOptions: MenuOption[] = [
+  {
+    label: renderLabel('AutreCoding', '/'),
+    key: '/',
   },
-  computed: {
-    navs(){
-      return this.$store.state.navs
-    }
+  // {
+  //   label: renderLabel('书单', '/book'),
+  //   key: '/book',
+  //   icon: renderIcon(BookOutlined),
+  // },
+  {
+    label: renderLabel('话题', '/topic'),
+    key: '/topic',
+    icon: renderIcon(TagsOutlined),
   },
-  methods: {
-    setCurrent(){
-      //this.current = [this.$site.themeConfig.nav[0].link]
-      if(this.navs.indexOf(this.$route.path)>-1){
-        this.current = [this.$route.path]
-      }else{
-        this.current = ["/"]
-      }
-    }
-  },
-  mounted: function(){
-    this.setCurrent()
-  },
-  
-  async fetch({ store, params,$axios }) {
-    let res = await $axios.$get(`/o/menu`)
-    if(res.code ==  0){
-      store.commit('setNavs', res.data.value)
-    }
-     
-  }
+]
+const gotovaleu = ref("")
+const inputText = (e:string)=>{
+  gotovaleu.value = e
+}
+const router = useRouter()
+const goto = ()=>{
+  console.log(gotovaleu.value)
+  let url = 'https://github.com/search?q=' + gotovaleu.value
+  window.open(url, "_blank")
 }
 </script>
-<style scoped>
-.header{
-  height: 48px;
-  padding: 0;
-  border-bottom: 1px solid #e8e8e8;
-  background: #fff;
-}
-
-.menu{
-  max-width: 960px;
-  margin: auto;
-  width: 100%;
-}
+<style>
 </style>

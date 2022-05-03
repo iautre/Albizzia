@@ -8,9 +8,9 @@ COPY . /var/app/
 WORKDIR /var/app
 
 RUN set -x \
-    && yarn install
-    # && npm run build
+    && yarn install \
+    && yarn build
 
 #开放端口
 EXPOSE 3000
-CMD ["yarn","pre"]
+CMD ["yarn","start"]

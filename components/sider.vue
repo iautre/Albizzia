@@ -59,12 +59,12 @@
     <n-card hoverable :bordered="true">
       <span id="poemcard"></span>
     </n-card>
-    <n-card hoverable :bordered="true">
+    <!-- <n-card hoverable :bordered="true">
       「微信」扫一扫 AutreCoding
     </n-card>
     <n-card hoverable :bordered="true">
       「微信」扫一扫 AutreCoding
-    </n-card>
+    </n-card> -->
   </n-space>
 </template>
 <script lang="ts" setup >

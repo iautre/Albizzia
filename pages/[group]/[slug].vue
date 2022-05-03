@@ -3,10 +3,10 @@
     <Head :title="item.title" />
     <n-empty v-if="item.title === '404'" description="404">
       <template #extra>
-        <a href="/"><n-button size="small">
+        <NuxtLink to="/"><n-button size="small">
           看看别的
         </n-button>
-        </a>
+        </NuxtLink>
       </template>
     </n-empty>
     <n-thing v-if="item.title !== '404'">

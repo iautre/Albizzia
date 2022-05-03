@@ -8,7 +8,7 @@
                 </n-icon>
             </template>
             <template #extra>
-                <a v-if="page !== 1" :href="page === 2 ? '/' : '/page/'+ (page-1)"><n-button>上一页</n-button></a> 
+                <NuxtLink v-if="page !== 1" :to="page === 2 ? '/' : '/page/'+ (page-1)"><n-button>上一页</n-button></NuxtLink> 
             </template>
         </n-empty>
         <n-list v-if="data.articles.length > 0" style="margin-top: 0;">
@@ -31,7 +31,7 @@
                 </template>
                 <n-thing>
                     <template #header>
-                        <a :href="item.path">{{ item.title }}</a>
+                        <NuxtLink :to="item.path">{{ item.title }}</NuxtLink>
                     </template>
                     <template #header-extra>
                         <Datetime :issued="item.issued" />
@@ -71,8 +71,8 @@
             </n-list-item>
             <template #footer>
                 <n-space justify="center">
-                    <a v-if="page !== 1" :href="page === 2 ? '/' : '/page/'+ (page-1)"><n-button>上一页</n-button></a> 
-                    <a v-if="data.articles.length === 10" :href="'/page/'+ (page+1)"><n-button>下一页</n-button></a> 
+                    <NuxtLink v-if="page !== 1" :to="page === 2 ? '/' : '/page/'+ (page-1)"><n-button>上一页</n-button></NuxtLink> 
+                    <NuxtLink v-if="data.articles.length === 10" :to="'/page/'+ (page+1)"><n-button>下一页</n-button></NuxtLink> 
                 </n-space>
             </template>
             </n-list>

@@ -24,18 +24,18 @@ import {
   TagsOutlined,
   SearchOutlined
 } from '@vicons/antd'
-// import { NuxtLink } from '~~/.nuxt/components'
+import { NuxtLink } from '~~/.nuxt/components'
 const renderIcon = (icon: Component) => {
   return () => h(NIcon, null, { default: () => h(icon) })
 }
 const renderLabelN = (label:string, path:string) =>{
-  // return () => h(NuxtLink,{to:{path:path}},{default: ()=> label})
+  return () => h(NuxtLink,{to:{path:path}},{default: ()=> label})
   return null
 }
 const renderLabelA = (label:string, path:string) =>{
   return () => h('a',{href:path},label)
 }
-const renderLabel = renderLabelA
+const renderLabel = renderLabelN
 const activeKey = useMenuActiveKey(useRoute().path)
 const menuOptions: MenuOption[] = [
   {

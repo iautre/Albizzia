@@ -10,8 +10,8 @@
         ">
             <Header />
           </n-layout-header>
-          <n-layout has-sider position="absolute" style="top: 56px">
-            <n-layout-sider :width="348" show-trigger="bar" :collapsed-width="0" :native-scrollbar="false" style="border-right: 1px solid var(--n-border-color);"
+          <n-layout :has-sider="hasSider" position="absolute" style="top: 56px">
+            <n-layout-sider v-if="hasSider" :width="348" show-trigger="bar" :collapsed-width="0" :native-scrollbar="false" style="border-right: 1px solid var(--n-border-color);"
               :show-collapsed-content="false" content-style="padding: 24px 24px 24px 24px;">
               <Sider />
             </n-layout-sider>
@@ -40,6 +40,7 @@ import {
   UpOutlined
 } from '@vicons/antd'
 const dateLocale = dateZhCN;
+const hasSider = ref(false)
 </script>
 <style>
 a {

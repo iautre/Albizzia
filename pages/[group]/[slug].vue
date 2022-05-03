@@ -80,14 +80,12 @@ import {
 import { useNotification } from 'naive-ui'
 import QRCode from 'qrcode'
 const route = useRoute()
-debugger
 const { data: item } = await useFetch(`/a/info?slug=${route.params.slug}`, {
   baseURL: useRuntimeConfig().BASE_API,
   headers: {
     'Client': useRuntimeConfig().APP_KEY
   },
   transform: (input) => {
-    debugger
     if (input['code'] === 0 && input['data']) {
       return input['data']
     }
@@ -95,7 +93,6 @@ const { data: item } = await useFetch(`/a/info?slug=${route.params.slug}`, {
   }
 })
 const wxmpQrcode = item.value.wxmpurl ?  await QRCode.toDataURL(item.value.wxmpurl) : ''
-debugger
 const notification = useNotification()
 const like = async (item) => {
   notification.create({

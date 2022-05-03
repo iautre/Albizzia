@@ -35,17 +35,11 @@
 </div>
 </template>
 <script lang="ts" setup>
-import { h, ref, Component, computed } from "vue";
-import { NIcon, useOsTheme, darkTheme, dateZhCN } from "naive-ui";
-import type { MenuOption } from "naive-ui";
-import hljs from "highlight.js/lib/core";
+import {  dateZhCN } from "naive-ui";
 import {
   UpOutlined
 } from '@vicons/antd'
 const dateLocale = dateZhCN;
-const osThemeRef = useOsTheme();
-// const theme = computed(() => (osThemeRef.value === 'dark' ? darkTheme : null))
-const theme = computed(() => darkTheme);
 </script>
 <style>
 a {

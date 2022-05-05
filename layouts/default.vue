@@ -36,11 +36,14 @@
 </template>
 <script lang="ts" setup>
 import {  dateZhCN } from "naive-ui";
+import { computed } from 'vue'
 import {
   UpOutlined
 } from '@vicons/antd'
 const dateLocale = dateZhCN;
-const hasSider = ref(false)
+// const clientWidth = document.documentElement.clientWidth
+const hasSider = computed(()=> true)
+
 </script>
 <style>
 a {

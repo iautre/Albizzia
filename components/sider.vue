@@ -22,7 +22,7 @@
                 </template>
               </n-button>
             </a>
-            <a href="https://github.com/autrec" target="_blank">
+            <a href="https://github.com/iautre" target="_blank">
               <n-button circle size="small">
                 <template #icon>
                   <n-icon>

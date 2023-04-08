@@ -1,0 +1,12 @@
+cos:
+  base:
+    secretid: vvBG3FBtelYMh5RNqmpmBfCIdm7561Amu77kMLu/FdehLrUzfw/00mT1FLSYivMD
+    secretkey: m4x+LB2jge7gY0/c6Kleq1KtZjt79uMYoaabnD8WAB/eQ1lHjB+NSA6psd9+JBIz
+    sessiontoken: 3kNZR4wfjUgOqbHffiQSMw==
+    protocol: https
+  buckets:
+  - name: coding-web-1251724174
+    alias: coding-web
+    region: ""
+    endpoint: cos.ap-shanghai.myqcloud.com
+    ofs: false

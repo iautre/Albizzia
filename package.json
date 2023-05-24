@@ -9,7 +9,7 @@
     "docs:clean-dev": "vuepress dev docs --clean-cache",
     "docs:dev": "vuepress dev docs",
     "docs:update-package": "yarn dlx vp-update",
-    "docs:cos-sync": "./coscli-mac -c ./cos.yaml sync ./docs/.vuepress/dist/ cos://coding-web/ -r --thread-num=20 --exclude=**.DS_Store",
+    "docs:cos-sync": "./coscli-mac -c ./cos.yaml sync ./docs/.vuepress/dist/ cos://coding-web/ -r --thread-num=20",
     "docs:cos-rm": "./coscli-mac -c ./cos.yaml rm cos://coding-web/ -r -f"
   },
   "devDependencies": {

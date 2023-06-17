@@ -26,7 +26,7 @@ cd ~
 ```
 将本地id_rsa.pub中内容复制到服务器文件中
 ```
-echo "id_rsa.pub中内容" > .ssh/authorized_keys
+echo "id_rsa.pub中内容" >> .ssh/authorized_keys
 ```
 这样就可以免密登陆了
 ```

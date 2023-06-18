@@ -40,4 +40,4 @@ tagline: Coding Coding Coding ...
 
 # footer: 自定义你的页脚文字
 ---
-这里可以放信息
+[![【腾讯云】云服务器、云数据库、COS、CDN、短信等云产品特惠热卖中](https://upload-dianshi-1255598498.file.myqcloud.com/upload/nodir/345X200-9ae456f58874df499adf7c331c02cb0fed12b81d.jpg)](https://curl.qcloud.com/N3G1XRkY)

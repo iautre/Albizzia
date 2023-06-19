@@ -3,8 +3,4 @@ node_modules/
 docs/.vuepress/.cache/
 docs/.vuepress/.temp/
 docs/.vuepress/dist/
-coscli.log
-.DS_Store
-**/.DS_Store
-.DS_Store?
-*DS_Store
+docs copy

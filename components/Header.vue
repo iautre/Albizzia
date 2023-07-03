@@ -1,68 +1,23 @@
 <template>
-  <n-space justify="space-between">
-    <n-space>
-      <!-- <div style="width:348px;"></div> -->
-      <n-menu v-model:value="activeKey" mode="horizontal" :options="menuOptions" />
-    </n-space>
-    <n-space>
-      <div style="margin-right: 24px;">
-        <n-input round placeholder="github" :on-input="inputText" @keyup.enter="goto">
-          <template #suffix>
-            <n-icon :component="SearchOutlined" />
-          </template>
-        </n-input>
-      </div>
-    </n-space>
-  </n-space>
+  <v-app-bar flat>
+    <v-container class="fill-height d-flex align-center">
+      <v-avatar class="me-10 ms-4" color="grey-darken-1" size="32"></v-avatar>
+      <NuxtLink v-for="link in links" :key="link.key" :to="link.path">
+        <v-btn variant="text"> {{ link.name }} </v-btn>
+      </NuxtLink>
+      <v-spacer></v-spacer>
+      <v-responsive max-width="260">
+        <v-text-field density="compact" hide-details variant="solo"></v-text-field>
+      </v-responsive>
+    </v-container>
+  </v-app-bar>
 </template>
-<script lang="ts" setup >
-import { h, ref, Component } from 'vue'
-import type { MenuOption } from 'naive-ui'
-import { NIcon } from 'naive-ui'
-import {
-  BookOutlined,
-  TagsOutlined,
-  SearchOutlined
-} from '@vicons/antd'
-import { NuxtLink } from '~~/.nuxt/components'
-const renderIcon = (icon: Component) => {
-  return () => h(NIcon, null, { default: () => h(icon) })
-}
-const renderLabelN = (label:string, path:string) =>{
-  return () => h(NuxtLink,{to:{path:path}},{default: ()=> label})
-  return null
-}
-const renderLabelA = (label:string, path:string) =>{
-  return () => h('a',{href:path},label)
-}
-const renderLabel = renderLabelN
-const activeKey = useMenuActiveKey(useRoute().path)
-const menuOptions: MenuOption[] = [
-  {
-    label: renderLabel('AutreCoding', '/'),
-    key: '/',
-  },
-  // {
-  //   label: renderLabel('书单', '/book'),
-  //   key: '/book',
-  //   icon: renderIcon(BookOutlined),
-  // },
-  {
-    label: renderLabel('话题', '/topic'),
-    key: '/topic',
-    icon: renderIcon(TagsOutlined),
-  },
+
+<script setup>
+const links = [
+  { key: '1', path: '/', name: '首页' },
+  { key: '2', path: '/books', name: '好书推荐' },
+  { key: '3', path: '/tags/java', name: 'java' },
+  { key: '4', path: '/about', name: '关于' },
 ]
-const gotovaleu = ref("")
-const inputText = (e:string)=>{
-  gotovaleu.value = e
-}
-const router = useRouter()
-const goto = ()=>{
-  console.log(gotovaleu.value)
-  let url = 'https://github.com/search?q=' + gotovaleu.value
-  window.open(url, "_blank")
-}
 </script>
-<style>
-</style>

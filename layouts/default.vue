@@ -1,58 +1,30 @@
 <template>
-  <div id="autrecoding">
-    <n-notification-provider>
-      <n-config-provider :date-locale="dateLocale">
-        <n-layout style="height: 100vh">
-          <n-layout-header style="
-          height: 56px;
-          line-height: 56px;
-          border-bottom: 1px solid var(--n-border-color);
-        ">
-            <Header />
-          </n-layout-header>
-          <n-layout :has-sider="hasSider" position="absolute" style="top: 56px">
-            <n-layout-sider v-if="hasSider" :width="348" show-trigger="bar" :collapsed-width="0" :native-scrollbar="false" style="border-right: 1px solid var(--n-border-color);"
-              :show-collapsed-content="false" content-style="padding: 24px 24px 24px 24px;">
-              <Sider />
-            </n-layout-sider>
-            <n-layout :native-scrollbar="false">
-              <n-layout-content content-style="padding: 24px;min-height: calc(100vh - 120px);">
-                <slot />
-              </n-layout-content>
-              <n-layout-footer>
-                <Footer />
-              </n-layout-footer>
-              <n-back-top :right="100">
-                <n-icon size="18">
-                  <UpOutlined />
-                </n-icon>
-              </n-back-top>
-            </n-layout>
-          </n-layout>
-        </n-layout>
-      </n-config-provider>
-      </n-notification-provider>
-</div>
+    <v-app id="inspire">
+        <Header />
+        <v-main class="bg-grey-lighten-3">
+            <v-container>
+                <v-row>
+                    <v-col cols="12">
+                        <div class="d-flex justify-center mb-6 bg-grey-lighten-3">
+                            <v-sheet class="ma-2 " width="300px" color="grey-lighten-3">
+                                <Sider />
+                            </v-sheet>
+                            <v-sheet class="ma-2 w-100" style="overflow:hidden;" max-width="100%" min-height="80vh" color="grey-lighten-3">
+                                <slot />
+                            </v-sheet>
+                        </div>
+                    </v-col>
+                    <v-col cols="12">
+                        <v-sheet class="d-flex align-center justify-center" color="grey-lighten-3">
+                            <v-footer class="bg-grey-lighten-3 text-center d-flex flex-column">
+                                <div>
+                                    {{ new Date().getFullYear() }} · <strong>AutreCoding</strong>
+                                </div>
+                            </v-footer>
+                        </v-sheet>
+                    </v-col>
+                </v-row>
+            </v-container>
+        </v-main>
+    </v-app>
 </template>
-<script lang="ts" setup>
-import {  dateZhCN } from "naive-ui";
-import { computed } from 'vue'
-import {
-  UpOutlined
-} from '@vicons/antd'
-const dateLocale = dateZhCN;
-// const clientWidth = document.documentElement.clientWidth
-const hasSider = computed(()=> true)
-
-</script>
-<style>
-a {
-  color: #333;
-  outline: none;
-  text-decoration: none;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  -webkit-user-select: none;
-  -moz-user-focus: none;
-  -moz-user-select: none;
-}
-</style>

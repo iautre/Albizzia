@@ -21,3 +21,8 @@ export const articlePage = async (params:any)=>{
     debugger
     return result
 }
+export const getArticle = async (params:any)=>{
+    const result =  await request<Article>("/coding/article/info", params)
+    debugger
+    return result
+}

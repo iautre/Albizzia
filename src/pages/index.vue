@@ -25,17 +25,8 @@
 <script lang="ts" setup>
 
 import {storeToRefs} from "pinia"
-// import {articlePage} from '@/api/index'
-// const { data: data } = await useFetch('https://gateway.autre.cn/coding/article/page')
 const aritcleStore = useStore.useArticleStore()
 // 
 await aritcleStore.getArticlePage()
 const {articlePageData} = storeToRefs(aritcleStore)
-// {records: [], pages: 1, current:1}
-// const ddd = await articlePage({})
-// await aritcleStore.getArticlePage()
-// debugger
-
-
-
 </script>

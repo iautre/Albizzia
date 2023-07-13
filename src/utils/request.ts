@@ -15,7 +15,7 @@ const requestParams = {
     // // 响应错误
     // onResponseError({ request, response, options }) {}
   }
-  
+
 interface Result<T> {
     code: Number,
     msg: string,
@@ -24,6 +24,5 @@ interface Result<T> {
 
 export const request = async <T>(url:string='/', params?: any) =>{
   const {data: result}  = await $fetch<Result<T>>(url, {...requestParams, ...params})
-  debugger
   return result
 }

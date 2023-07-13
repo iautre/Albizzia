@@ -1,11 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  srcDir: 'src/',
   // ssr: false,
   devtools: { enabled: true },
   pages: true,
   modules: [
     '@nuxt/content',
     '@invictus.codes/nuxt-vuetify',
+    '@pinia/nuxt',
   ],
   app: {
     head: {
@@ -42,5 +44,22 @@ export default defineNuxtConfig({
       styles: 'sass',
       autoImport: true,
     }
+  },
+
+nitro: {
+  devProxy: {
+      "/coding": {
+          target: 'https://gateway.autre.cn/coding',
+          prependPath: true,
+          changeOrigin: true,
+      }
+
   }
+}
+
+  // pinia: {
+  //   autoImports: [
+  //     'defineStore', // import { defineStore } from 'pinia'
+  //   ],
+  // },
 })

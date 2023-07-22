@@ -11,17 +11,11 @@ export const useArticleStore = defineStore('ArticleData', () => {
     total: 0,
     size: 10
   })
-  const articleData = ref<Article>({
-    id: 0,
-    slug: '',
-    title: '',
-    content: '',
-  })
+  const articleData = ref<Article>()
 
   const getArticlePage = async () => {
     const data = await articlePage({})
     if (data) {
-      debugger
       articlePageData.value.records = data.records || []
       articlePageData.value.pages = data.pages || 0
       articlePageData.value.current = data.current || 1
@@ -29,10 +23,8 @@ export const useArticleStore = defineStore('ArticleData', () => {
     }
   }
   const getArticleData = async (slug: string) => {
-    const data = await getArticle({ slug: slug })
-    if (data) {
+    const data = await getArticle(slug)
       articleData.value = data
-    }
   }
 
 

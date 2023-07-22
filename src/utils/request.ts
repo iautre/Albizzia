@@ -1,7 +1,7 @@
 //公共参数
 
 const requestParams = {
-    // baseURL:"https://gateway.autre.cn/coding",
+    baseURL:"https://gateway.autre.cn",
     method:"get",
     headers:{},
     // // 请求拦截

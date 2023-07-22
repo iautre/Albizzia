@@ -12,17 +12,18 @@ export interface Article {
     id: number,
     title: string,
     slug: string,
+    path: string,
+    issued: Date,
     headImg?:string,
     description?:string,
     content: string,
+    views: number,
 }
 export const articlePage = async (params:any)=>{
     const result =  await request<PageModel<Article>>("/coding/article/page", params)
-    debugger
     return result
 }
-export const getArticle = async (params:any)=>{
-    const result =  await request<Article>("/coding/article/info", params)
-    debugger
+export const getArticle = async (slug:string)=>{
+    const result =  await request<Article>(`/coding/article/info?slug=${slug}`)
     return result
 }

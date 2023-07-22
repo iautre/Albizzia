@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@invictus.codes/nuxt-vuetify',
-    '@pinia/nuxt',
+    '@pinia/nuxt'
   ],
   app: {
     head: {
@@ -31,10 +31,21 @@ export default defineNuxtConfig({
   content: {
     // https://content.nuxtjs.org/api/configuration
   },
+  css: [
+    '@mdi/font/css/materialdesignicons.min.css',
+    '@/assets/css/main.css',
+  ],
+  plugins: [
+    
+  ],
   vuetify: {
     /* vuetify options */
     vuetifyOptions: {
       // @TODO: list all vuetify options
+      ssr: true,
+      icons: {
+        defaultSet: 'mdi'
+      }
     },
     moduleOptions: {
       /* nuxt-vuetify module options */
@@ -46,16 +57,16 @@ export default defineNuxtConfig({
     }
   },
 
-nitro: {
-  devProxy: {
+  nitro: {
+    devProxy: {
       "/coding": {
-          target: 'https://gateway.autre.cn/coding',
-          prependPath: true,
-          changeOrigin: true,
+        target: 'https://gateway.autre.cn/coding',
+        prependPath: true,
+        changeOrigin: true,
       }
 
+    }
   }
-}
 
   // pinia: {
   //   autoImports: [

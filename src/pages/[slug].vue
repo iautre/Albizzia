@@ -1,0 +1,3 @@
+<template>
+  <BlogText />
+</template>

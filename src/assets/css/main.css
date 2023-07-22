@@ -1,0 +1,16 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+h1{
+    font-size: 1.15rem !important;
+}
+h2{
+    font-size: 1.05rem !important;
+}
+h3{
+    font-size: 0.95rem !important;
+}

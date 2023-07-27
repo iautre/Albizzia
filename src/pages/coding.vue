@@ -11,11 +11,11 @@
           </v-card-title>
           <v-card-subtitle>
             <v-chip prepend-icon="mdi-calendar-range" variant="text">
-                {{dateformat(item.created)}}
+              {{dateformat(item.created)}}
             </v-chip>
-<!--            <v-chip prepend-icon="mdi-eye-outline" variant="text">-->
-<!--                {{item.views}}-->
-<!--            </v-chip>-->
+            <!--            <v-chip prepend-icon="mdi-eye-outline" variant="text">-->
+            <!--                {{item.views}}-->
+            <!--            </v-chip>-->
             <v-chip prepend-icon="mdi-format-list-bulleted" variant="text">
               <v-chip variant="text" class="pa-1" v-for="category in item.categories" :key="category.cid">
                 {{category.name}}
@@ -29,8 +29,8 @@
           </v-card-subtitle>
           <v-card-text>
             <v-img v-if="item.thumb && item.thumb.firstimg"
-                cover
-                :src="item.thumb.firstimg"
+                   cover
+                   :src="item.thumb.firstimg"
             ></v-img>
           </v-card-text>
         </v-card>
@@ -39,7 +39,7 @@
     </v-row>
     <v-row dense>
       <v-col cols="12">
-<!--        <v-pagination v-model="articlePageData.current" :length="articlePageData.pages" rounded="circle"></v-pagination>-->
+        <!--        <v-pagination v-model="articlePageData.current" :length="articlePageData.pages" rounded="circle"></v-pagination>-->
       </v-col>
     </v-row>
   </NuxtLayout>

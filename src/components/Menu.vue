@@ -1,16 +1,15 @@
 <template>
-  <v-card class="ma-1 bg-grey-lighten-3" style="width: 200px;box-shadow: none;">
+  <v-card class="ma-1" style="position: fixed; z-index: 9999;width: 200px;box-shadow: none;background:none;">
 <!--    <v-card-title class="mx-auto bg-grey-lighten-3">-->
 <!--    <v-avatar color="grey-darken-1" size="64"></v-avatar>-->
 <!--    </v-card-title>-->
-  <v-list class="bg-grey-lighten-3 pt-0">
-    <v-list-item class="pt-1 pb-2"
-        prepend-avatar="https://tva3.sinaimg.cn/crop.0.0.1080.1080.180/65a969ddjw8exzscanu65j20u00u0wg6.jpg"
-        title="a little"
-    >
-      <template v-slot:subtitle>
-        有风小站
-      </template>
+  <v-list class="pt-0" style="background:none;">
+    <v-list-item class="pt-1 pb-2" >
+<!--        prepend-avatar="https://avatars.githubusercontent.com/u/8779333?v=4"-->
+<!--        title="a little"-->
+<!--        subtitle="有风小站"-->
+
+      <NuxtLink to="/">有风小站</NuxtLink>
     </v-list-item>
     <v-divider class="my-2"></v-divider>
     <NuxtLink v-for="item in menus" :key="item.key" :to="item.path" >
@@ -50,5 +49,6 @@ const links = ref([
   {key: '2', title: '微信',icon: 'mdi-wechat',  path: '/shuoshuo'},
   {key: '4', title: 'facebook', icon: 'mdi-facebook', path: '/coding'},
   {key: '5', title: '邮箱', icon: 'mdi-at', path: ''},
+  {key: '6', title: '邮箱', icon: 'mdi-at', path: ''},
 ])
 </script>

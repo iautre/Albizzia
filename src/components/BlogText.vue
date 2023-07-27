@@ -16,7 +16,7 @@
                         </v-chip>
                     </v-card-subtitle>
                     <v-card-text>
-                        <div class="content text-body-1" v-html="md.render(articleData.content)"></div>
+                        <div class="content text-body-1" v-html="md.render(articleData.text)"></div>
                     </v-card-text>
 
                 </v-card>

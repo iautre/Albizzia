@@ -59,8 +59,8 @@ export default defineNuxtConfig({
 
   nitro: {
     devProxy: {
-      "/coding": {
-        target: 'https://gateway.autre.cn/coding',
+      "/api": {
+        target: 'https://autre.cn/',
         prependPath: true,
         changeOrigin: true,
       }

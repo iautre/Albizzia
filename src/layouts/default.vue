@@ -7,7 +7,7 @@
                     <v-col cols="12">
                         <div class="d-flex justify-center mb-6 bg-grey-lighten-3">
                             <v-sheet class="ma-1"  width="208px" color="grey-lighten-3">
-                              <div style="width: 208px;"></div>
+<!--                              <div style="width: 208px;"></div>-->
                                 <Menu />
                             </v-sheet>
                             <v-sheet class="ma-1" style="overflow:hidden;" width="100%" min-height="80vh" color="grey-lighten-3">

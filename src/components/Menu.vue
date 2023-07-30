@@ -1,5 +1,5 @@
 <template>
-  <v-card class="ma-1" style="position: fixed; z-index: 9999;width: 200px;box-shadow: none;background:none;">
+  <v-card class="ma-1 mymain" >
 <!--    <v-card-title class="mx-auto bg-grey-lighten-3">-->
 <!--    <v-avatar color="grey-darken-1" size="64"></v-avatar>-->
 <!--    </v-card-title>-->
@@ -39,16 +39,23 @@
 const menus = ref([
   {key: '1', title: '首页',icon: 'mdi-home-roof', path: '/'},
   {key: '2', title: '说说',icon: 'mdi-chat-outline',  path: '/shuoshuo'},
-  {key: '3', title: '我去过', icon: 'mdi-train-car-flatbed', path: '/mygo'},
-  {key: '4', title: 'Coding', icon: 'mdi-console-line', path: '/coding'},
-  {key: '5', title: '好书', icon: 'mdi-book-check-outline', path: ''},
-  // {key: '6', title: '空中通联', icon: 'mdi-antenna', path: 'https://autre.cn/bh4ghm'},
+  // {key: '3', title: '我去过', icon: 'mdi-train-car-flatbed', path: '/mygo'},
+  // {key: '4', title: 'Coding', icon: 'mdi-console-line', path: '/coding'},
+  // {key: '5', title: '好书', icon: 'mdi-book-check-outline', path: ''},
+  {key: '8', title: '百花', icon: 'mdi-book-check-outline', path: '/100flower'},
+  {key: '9', title: '标本', icon: 'mdi-book-check-outline', path: '/my-biaoben'},
+  {key: '10', title: '关于我', icon: 'mdi-book-check-outline', path: '/about'},
+  {key: '99', title: '空中通联', icon: 'mdi-antenna', path: 'https://autre.cn/bh4ghm'},
 ])
 const links = ref([
-  {key: '1', title: '首页',icon: 'mdi-antenna', path: '/'},
-  {key: '2', title: '微信',icon: 'mdi-wechat',  path: '/shuoshuo'},
-  {key: '4', title: 'facebook', icon: 'mdi-facebook', path: '/coding'},
-  {key: '5', title: '邮箱', icon: 'mdi-at', path: ''},
-  {key: '6', title: '邮箱', icon: 'mdi-at', path: ''},
+  // {key: '1', title: '首页',icon: 'mdi-antenna', path: '/'},
+  // {key: '2', title: '微信',icon: 'mdi-wechat',  path: '/shuoshuo'},
+  // {key: '4', title: 'facebook', icon: 'mdi-facebook', path: '/coding'},
+  // {key: '5', title: '邮箱', icon: 'mdi-at', path: ''},
 ])
 </script>
+<style>
+.mymain{
+  //position: fixed; z-index: 9999;width: 200px;box-shadow: none;background:none;
+}
+</style>

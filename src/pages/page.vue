@@ -21,7 +21,7 @@
                 {{category.name}}
               </v-chip>
             </v-chip>
-            <v-chip prepend-icon="mdi-tag-multiple-outline" variant="text">
+            <v-chip v-if="item.tag && item.tag.length > 0" prepend-icon="mdi-tag-multiple-outline" variant="text">
               <v-chip variant="text" class="pa-1" v-for="tag in item.tag" :key="tag.name">
                 {{tag.name}}
               </v-chip>
@@ -45,8 +45,8 @@
   </NuxtLayout>
 </template>
 <script lang="ts" setup>
-
 import { storeToRefs } from "pinia"
+const router = useRoute()
 const aritcleStore = useStore.useArticleStore()
 const dateformat = (e:string)=>{
   const es  = Number(e) * 1000
@@ -56,6 +56,6 @@ const dateformat = (e:string)=>{
   const d = '0' + date.getUTCDate()
   return `${y}-${m.substring(m.length-2)}-${d.substring(d.length-2)}`
 }
-await aritcleStore.getArticleList()
+await aritcleStore.getArticleList(Number(router.params.page as string))
 const { articleList } = storeToRefs(aritcleStore)
 </script>

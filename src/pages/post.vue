@@ -3,11 +3,11 @@
     <div class="content-main">
       <v-row dense>
         <v-col cols="12">
-          <v-card class="ma-1" v-if="articleData">
+          <v-card class="ma-1" v-if="articleData" style="min-height: 80vh;">
             <v-card-title class="text-h1 title">
               {{ articleData.title }}
             </v-card-title>
-            <v-card-subtitle>
+            <v-card-subtitle v-if="pageType === 'post'">
               <v-chip prepend-icon="mdi-calendar-range" variant="text">
                 {{dateformat(articleData.created)}}
               </v-chip>
@@ -16,7 +16,7 @@
                   {{category.name}}
                 </v-chip>
               </v-chip>
-              <v-chip prepend-icon="mdi-tag-multiple-outline" variant="text">
+              <v-chip v-if="articleData.tag && articleData.tag.length > 0" prepend-icon="mdi-tag-multiple-outline" variant="text">
                 <v-chip variant="text" class="pa-1" v-for="tag in articleData.tag" :key="tag.name">
                   {{tag.name}}
                 </v-chip>
@@ -37,6 +37,7 @@ import { storeToRefs } from "pinia"
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
+const { pageType:pageType } = defineProps(['pageType'])
 const router = useRoute()
 const md: any = new MarkdownIt({
   html: true,
@@ -65,7 +66,7 @@ const dateformat = (e:string)=>{
   const d = '0' + date.getUTCDate()
   return `${y}-${m.substring(m.length-2)}-${d.substring(d.length-2)}`
 }
-await aritcleStore.getArticleData(router.params.cid as string)
+await aritcleStore.getArticleData(router.params.cid as string, router.params.slug as string)
 const { articleData } = storeToRefs(aritcleStore)
 </script>
 <style>

@@ -1,35 +1,37 @@
 <template>
   <NuxtLayout>
-    <div class="content-main">
-      <v-row dense>
-        <v-col cols="12">
-          <v-card class="ma-1" v-if="articleData" style="min-height: 80vh;">
-            <v-card-title class="text-h1 title">
-              {{ articleData.title }}
-            </v-card-title>
-            <v-card-subtitle v-if="pageType === 'post'">
-              <v-chip prepend-icon="mdi-calendar-range" variant="text">
-                {{dateformat(articleData.created)}}
-              </v-chip>
-              <v-chip prepend-icon="mdi-format-list-bulleted" variant="text">
-                <v-chip variant="text" class="pa-1" v-for="category in articleData.categories" :key="category.cid">
-                  {{category.name}}
-                </v-chip>
-              </v-chip>
-              <v-chip v-if="articleData.tag && articleData.tag.length > 0" prepend-icon="mdi-tag-multiple-outline" variant="text">
-                <v-chip variant="text" class="pa-1" v-for="tag in articleData.tag" :key="tag.name">
-                  {{tag.name}}
-                </v-chip>
-              </v-chip>
-            </v-card-subtitle>
-            <v-card-text>
-              <div class="content text-body-1" v-html="md.render(articleData.text)"></div>
-            </v-card-text>
-
-          </v-card>
-        </v-col>
-      </v-row>
-    </div>
+    <n-thing>
+      <template #header>
+        {{ articleData.title }}
+      </template>
+      <template #description>
+          <n-space>
+            <n-button text style="margin-right: 10px;">
+              <template #icon>
+                <n-icon :component="CalendarOutlined" ></n-icon>
+              </template>
+              {{dateformat(articleData.created)}}
+            </n-button>
+            <n-button text style="margin-right: 10px;">
+              <template #icon>
+                <n-icon :component="BarsOutlined" ></n-icon>
+              </template>
+              <template v-for="category in articleData.categories" :key="category.cid">
+                {{category.name}}
+              </template>
+            </n-button>
+            <n-button text v-if="articleData.tag && articleData.tag.length > 0" >
+              <template #icon>
+                <n-icon :component="TagsOutlined" ></n-icon>
+              </template>
+              <template  v-for="tag in articleData.tag" :key="tag.cid">
+                {{tag.name}}
+              </template>
+            </n-button>
+          </n-space>
+       </template>
+      <div class="content text-body-1" v-html="md.render(articleData.text)"></div>
+    </n-thing>
   </NuxtLayout>
 </template>
 <script lang="ts" setup>
@@ -37,6 +39,8 @@ import { storeToRefs } from "pinia"
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
+import {NThing, NTag, NIcon, NButton} from 'naive-ui'
+import {BarsOutlined, CalendarOutlined, TagsOutlined} from "@vicons/antd";
 const { pageType:pageType } = defineProps(['pageType'])
 const router = useRoute()
 const md: any = new MarkdownIt({

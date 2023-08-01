@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 
 import {articlePage, getArticle, PageModel, Article, getPage} from '@/api/index'
-import {de} from "vuetify/locale";
 
 export const useArticleStore = defineStore('ArticleData', () => {
 

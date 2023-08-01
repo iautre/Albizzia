@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   pages: true,
   modules: [
     '@nuxt/content',
-    '@invictus.codes/nuxt-vuetify',
+    '@unocss/nuxt',
     '@pinia/nuxt'
   ],
   app: {
@@ -32,30 +32,11 @@ export default defineNuxtConfig({
     // https://content.nuxtjs.org/api/configuration
   },
   css: [
-    '@mdi/font/css/materialdesignicons.min.css',
     '@/assets/css/main.css',
   ],
   plugins: [
     
   ],
-  vuetify: {
-    /* vuetify options */
-    vuetifyOptions: {
-      // @TODO: list all vuetify options
-      ssr: true,
-      icons: {
-        defaultSet: 'mdi'
-      }
-    },
-    moduleOptions: {
-      /* nuxt-vuetify module options */
-      treeshaking: true,
-      useIconCDN: false,
-      /* vite-plugin-vuetify options */
-      styles: 'sass',
-      autoImport: true,
-    }
-  },
 
   nitro: {
     devProxy: {
@@ -66,8 +47,26 @@ export default defineNuxtConfig({
       }
 
     }
+  },
+  build: {
+    transpile:
+        process.env.NODE_ENV === 'production'
+            ? [
+              'naive-ui',
+              'vueuc',
+              '@css-render/vue3-ssr',
+              '@juggle/resize-observer'
+            ]
+            : ['@juggle/resize-observer']
+  },
+  vite: {
+    optimizeDeps: {
+      include:
+          process.env.NODE_ENV === 'development'
+              ? ['naive-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone']
+              : []
+    }
   }
-
   // pinia: {
   //   autoImports: [
   //     'defineStore', // import { defineStore } from 'pinia'

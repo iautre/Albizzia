@@ -7,8 +7,8 @@ export const useArticleStore = defineStore('ArticleData', () => {
   const articleList = ref<Array<Article>>([])
   const articleData = ref<Article>()
 
-  const getArticleList = async (page=1) => {
-    const list = await articlePage({page:page})
+  const getArticleList = async (page=1, category:string) => {
+    const list = await articlePage({page:page, category: category})
     articleList.value = list || []
   }
   const getArticleData = async (cid:string|null = null, slug:string|null=null) => {

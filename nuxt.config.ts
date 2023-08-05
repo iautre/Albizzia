@@ -6,7 +6,6 @@ export default defineNuxtConfig({
   pages: true,
   modules: [
     '@nuxt/content',
-    '@unocss/nuxt',
     '@pinia/nuxt'
   ],
   app: {

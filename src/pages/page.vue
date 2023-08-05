@@ -1,48 +1,52 @@
 <template>
-  <NuxtLayout>
-    <n-list>
-      <n-list-item v-for="item in articleList" :key="item.cid">
-        <n-thing>
-          <template #header>
-            <NuxtLink :to="item.slug + '.html'">
-              {{ item.title }}
+  <div>
+    <NuxtLayout>
+      <n-list>
+        <n-empty v-if="articleList.length === 0" description="你什么也找不到" style="margin-top: 100px;;">
+          <template #extra>
+            <NuxtLink to="/">
+              <n-button size="small">
+                看看别的
+              </n-button>
             </NuxtLink>
           </template>
-          <template #description>
-            <n-space>
-              <n-button text style="margin-right: 10px;">
-                <template #icon>
-                  <n-icon :component="CalendarOutlined"></n-icon>
-                </template>
-                {{ dateformat(item.created) }}
+        </n-empty>
+        <n-list-item v-if="articleList.length > 0" v-for="(item, index) in articleList" :key="item.cid" :style="index===0 ? 'padding-top:0;': ''">
+          <n-thing>
+            <template #header>
+              <NuxtLink :to="'/'+item.slug + '.html'">
+                {{ item.title }}
+              </NuxtLink>
+            </template>
+            <template #description>
+              <ContentHeader :timeUnixStr="item.created" :categories="item.categories" :tags="item.tag"/>
+            </template>
+            <n-ellipsis :line-clamp="2" :tooltip="false">
+              <MarkdwonText :text="item.text"/>
+            </n-ellipsis>
+          </n-thing>
+        </n-list-item>
+        <template #footer>
+          <n-space justify="center">
+            <NuxtLink v-if="page>1" :to="'/page/'+ (page -1)">
+              <n-button round>
+                上一页
               </n-button>
-              <n-button text style="margin-right: 10px;">
-                <template #icon>
-                  <n-icon :component="BarsOutlined"></n-icon>
-                </template>
-                <template v-for="category in item.categories" :key="category.cid">
-                  {{ category.name }}
-                </template>
+            </NuxtLink>
+            <NuxtLink v-if="articleList.length === 5" :to="'/page/'+ (page + 1)">
+              <n-button round>
+                下一页
               </n-button>
-              <n-button text v-if="item.tag && item.tag.length > 0">
-                <template #icon>
-                  <n-icon :component="TagsOutlined"></n-icon>
-                </template>
-                <template v-for="tag in item.tag" :key="tag.name">
-                  {{ tag.name }}
-                </template>
-              </n-button>
-            </n-space>
-          </template>
-        </n-thing>
-      </n-list-item>
-    </n-list>
-  </NuxtLayout>
+            </NuxtLink>
+          </n-space>
+        </template>
+      </n-list>
+    </NuxtLayout>
+  </div>
 </template>
 <script lang="ts" setup>
-import {NButton, NIcon, NList, NListItem, NThing, NSpace} from 'naive-ui'
-import {storeToRefs} from "pinia"
-import {BarsOutlined, CalendarOutlined, TagsOutlined} from "@vicons/antd";
+import {NButton, NEmpty, NList, NListItem, NThing, NSpace, NCard, NEllipsis} from 'naive-ui'
+import {storeToRefs} from 'pinia'
 
 const router = useRoute()
 const aritcleStore = useStore.useArticleStore()
@@ -54,6 +58,7 @@ const dateformat = (e: string) => {
   const d = '0' + date.getUTCDate()
   return `${y}-${m.substring(m.length - 2)}-${d.substring(d.length - 2)}`
 }
-await aritcleStore.getArticleList(Number(router.params.page as string))
+const page = computed<Number>(() => Number(router.params.page) || 1)
+await aritcleStore.getArticleList(Number(router.params.page) || 1, router.params.category as string)
 const {articleList} = storeToRefs(aritcleStore)
 </script>

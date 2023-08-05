@@ -1,4 +1,5 @@
 <template>
+  <div>
   <NuxtLayout>
         <n-card >
           <template #cover>
@@ -8,24 +9,21 @@
           />
           </template>
           <n-list>
-            <template #header>
-              我是hhh
-            </template>
             <n-list-item v-for="item in articleList" :key="item.cid">
-              <n-thing title="Thing" title-extra="extra">
-                <template #description>
-                  {{dateformat(item.created)}}
+              <n-thing :title="item.title">
+                <template #header-extra>
+                  <DateTimeFormat :timeUnixStr="item.created"/>
                 </template>
-                {{item.text}}
+                <MarkdwonText :text="item.text" />
               </n-thing>
-
             </n-list-item>
             </n-list>
         </n-card>
   </NuxtLayout>
+  </div>
 </template>
 <script lang="ts" setup>
-import {NCard, NList, NListItem, NThing} from 'naive-ui'
+import {NCard, NList, NListItem, NThing, NTime} from 'naive-ui'
 import { storeToRefs } from "pinia"
 const aritcleStore = useStore.useArticleStore()
 const dateformat = (e:string)=>{

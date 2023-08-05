@@ -1,13 +1,34 @@
 <template>
+  <NuxtLink to="/">
+  <n-space justify="center" style="padding: 0 ;">
+      <n-avatar
+          round
+          :size="54"
+          src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
+      />
+    <n-space vertical>
+    <div>a lttle</div>
+    <div>有风小站</div>
+    </n-space>
+  </n-space>
+  </NuxtLink>
   <n-menu :options="menus" style="width: 200px"/>
 </template>
 <script lang="ts" setup>
-import {NMenu} from 'naive-ui'
+import {NMenu, NAvatar, NSpace} from 'naive-ui'
 import type {MenuOption} from 'naive-ui'
-import {Component, h} from 'vue'
+// import {Component, h} from 'vue'
 import {NIcon} from "naive-ui"
-import {HomeOutlined} from '@vicons/antd'
+
 import {NuxtLink} from '#components'
+import {
+  ChatbubblesOutline,
+  CodeSlashOutline,
+  FlowerOutline,
+  HomeOutline, ImageOutline, InformationCircleOutline, LogoGithub,
+  RadioOutline,
+  WifiOutline,
+} from '@vicons/ionicons5'
 
 const renderIcon = (icon: Component) => {
   return () => h(NIcon, null, {default: () => h(icon)})
@@ -16,11 +37,11 @@ const renderLabelN = (label: string, path: string) => {
   return () => h(NuxtLink, {to: path}, {default: () => label})
 }
 const menus: MenuOption[] = [
-  {
-    key: '1',
-    label: renderLabelN('首页', '/'),
-    icon: renderIcon(HomeOutlined),
-  },
+  // {
+  //   key: '1',
+  //   label: renderLabelN('首页', '/'),
+  //   icon: renderIcon(HomeOutline),
+  // },
   {
     key: 'divider-1',
     type: 'divider',
@@ -31,30 +52,47 @@ const menus: MenuOption[] = [
     }
   },
   {
-    key: '2',
+    key: 'divider-2',
     label: renderLabelN('说说', '/shuoshuo'),
-    icon: renderIcon(HomeOutlined),
+    icon: renderIcon(ChatbubblesOutline),
   },
   // {key: '3', title: '我去过', icon: 'mdi-train-car-flatbed', path: '/mygo'},
   // {key: '4', title: 'Coding', icon: 'mdi-console-line', path: '/coding'},
   // {key: '5', title: '好书', icon: 'mdi-book-check-outline', path: ''},
   {
-    key: '8',
+    key: 'divider-6',
+    label: renderLabelN('Coding', '/topic/coding'),
+    icon: renderIcon(CodeSlashOutline)
+  },
+  {
+    key: 'divider-8',
     label: renderLabelN('百花', '/100flower'),
-    icon: renderIcon(HomeOutlined), path: '/100flower'
+    icon: renderIcon(FlowerOutline)
   },
   {
-    key: '9',
+    key: 'divider-9',
     label: renderLabelN('标本', '/my-biaoben'),
-    icon: renderIcon(HomeOutlined),
+    icon: renderIcon(ImageOutline),
   },
   {
-    key: '10',
+    key: 'divider-10',
     label: renderLabelN('关于我', '/about'),
-    icon: renderIcon(HomeOutlined),
+    icon: renderIcon(InformationCircleOutline),
   },
   {
-    key: '99',
+    key: 'divider-98',
+    label: () => h(
+        'a',
+        {
+          href: 'https://github.com/iautre',
+          target: '_blank',
+        },
+        'Github'
+    ),
+    icon: renderIcon(LogoGithub)
+  },
+  {
+    key: 'divider-99',
     label: () => h(
         'a',
         {
@@ -63,7 +101,7 @@ const menus: MenuOption[] = [
         },
         '空中通联'
     ),
-    icon: renderIcon(HomeOutlined), path: 'https://autre.cn/bh4ghm'
+    icon: renderIcon(RadioOutline), path: 'https://autre.cn/bh4ghm'
   },
 ]
 

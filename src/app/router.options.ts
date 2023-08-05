@@ -18,15 +18,25 @@ export default <RouterConfig>{
             component: () => import("~/pages/post.vue"),
         },
         {
-            name: "page",
-            path: "/:slug",
-            props: {pageType: 'page'},
-            component: () => import("~/pages/post.vue"),
+            name: "category",
+            path: "/topic/:category",
+            component: () => import("~/pages/page.vue"),
+        },
+        {
+            name: "categoryPage",
+            path: "/topic/:category/:page",
+            component: () => import("~/pages/page.vue"),
         },
         {
             name: "shuoshuo",
             path: "/shuoshuo",
             component: () => import("~/pages/shuoshuo.vue"),
+        },
+        {
+            name: "page",
+            path: "/:slug",
+            props: {pageType: 'page'},
+            component: () => import("~/pages/post.vue"),
         },
     ],
 };

@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: 'src/',
-  // ssr: false,
+  ssr: false,
   devtools: { enabled: true },
   pages: true,
   modules: [
@@ -12,10 +12,10 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-16',
       viewport: 'width=500, initial-scale=1',
-      title: 'Autre Coding',
+      title: '有风小站',
       meta: [
         // <meta name="description" content="My amazing site">
-        { name: 'description', content: 'Autre Coding.' }
+        { name: 'description', content: '有风小站.' }
       ],
     },
     pageTransition: {

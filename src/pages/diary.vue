@@ -5,7 +5,8 @@
           <template #cover>
           <img
               height="200"
-              src="https://p1.imoxin.net/63f7833c73490246fd6dca9a/1"
+              class="carousel-img"
+              src="https://p1.imoxin.net/634c2a4acbc9e0b3e5d34a87/1!post"
           />
           </template>
           <n-list>
@@ -34,6 +35,6 @@ const dateformat = (e:string)=>{
   const d = '0' + date.getUTCDate()
   return `${y}-${m.substring(m.length-2)}-${d.substring(d.length-2)}`
 }
-await aritcleStore.getArticleList()
+await aritcleStore.getArticleList(1, 'diary')
 const { articleList } = storeToRefs(aritcleStore)
 </script>

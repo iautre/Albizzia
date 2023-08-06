@@ -1,21 +1,26 @@
 <template>
+<!--  <NuxtLink to="/">-->
+<!--  <n-space justify="center" style="padding: 0 ;">-->
+<!--      <n-avatar-->
+<!--          round-->
+<!--          :size="54"-->
+<!--          src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"-->
+<!--      />-->
+<!--    <n-space vertical>-->
+<!--    <div>a lttle</div>-->
+<!--    <div>有风小站</div>-->
+<!--    </n-space>-->
+<!--  </n-space>-->
+<!--  </NuxtLink>-->
   <NuxtLink to="/">
-  <n-space justify="center" style="padding: 0 ;">
-      <n-avatar
-          round
-          :size="54"
-          src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
-      />
-    <n-space vertical>
-    <div>a lttle</div>
-    <div>有风小站</div>
+    <n-space style="padding-left: 38px;padding-bottom: 12px;">
+    <div style="font-size: 16px;">有风小站</div>
     </n-space>
-  </n-space>
   </NuxtLink>
   <n-menu :options="menus" style="width: 200px"/>
 </template>
 <script lang="ts" setup>
-import {NMenu, NAvatar, NSpace} from 'naive-ui'
+import {NMenu, NH2, NAvatar, NSpace} from 'naive-ui'
 import type {MenuOption} from 'naive-ui'
 // import {Component, h} from 'vue'
 import {NIcon} from "naive-ui"
@@ -39,7 +44,7 @@ const renderLabelN = (label: string, path: string) => {
 const menus: MenuOption[] = [
   // {
   //   key: '1',
-  //   label: renderLabelN('首页', '/'),
+  //   label: renderLabelN('有风小站', '/'),
   //   icon: renderIcon(HomeOutline),
   // },
   {
@@ -53,15 +58,15 @@ const menus: MenuOption[] = [
   },
   {
     key: 'divider-2',
-    label: renderLabelN('说说', '/shuoshuo'),
+    label: renderLabelN('说说', '/diary'),
     icon: renderIcon(ChatbubblesOutline),
   },
   // {key: '3', title: '我去过', icon: 'mdi-train-car-flatbed', path: '/mygo'},
   // {key: '4', title: 'Coding', icon: 'mdi-console-line', path: '/coding'},
   // {key: '5', title: '好书', icon: 'mdi-book-check-outline', path: ''},
   {
-    key: 'divider-6',
-    label: renderLabelN('Coding', '/topic/coding'),
+    key: 'divider-3',
+    label: renderLabelN('随心拍', '/topic/pai'),
     icon: renderIcon(CodeSlashOutline)
   },
   {
@@ -73,6 +78,11 @@ const menus: MenuOption[] = [
     key: 'divider-9',
     label: renderLabelN('标本', '/my-biaoben'),
     icon: renderIcon(ImageOutline),
+  },
+  {
+    key: 'divider-6',
+    label: renderLabelN('Coding', '/topic/coding'),
+    icon: renderIcon(CodeSlashOutline)
   },
   {
     key: 'divider-10',

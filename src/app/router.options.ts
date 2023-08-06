@@ -28,9 +28,9 @@ export default <RouterConfig>{
             component: () => import("~/pages/page.vue"),
         },
         {
-            name: "shuoshuo",
-            path: "/shuoshuo",
-            component: () => import("~/pages/shuoshuo.vue"),
+            name: "diary",
+            path: "/diary",
+            component: () => import("~/pages/diary.vue"),
         },
         {
             name: "page",

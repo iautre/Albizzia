@@ -12,7 +12,7 @@
       <template #header>
         {{ articleData.title }}
       </template>
-      <template v-if="pageType === 'post'" #description>
+      <template v-if="articleData.type === 'post'" #description>
         <ContentHeader :timeUnixStr="articleData.created" :categories="articleData.categories" :tags="articleData.tag" />
        </template>
       <MarkdwonText :text="articleData.text" />
@@ -23,7 +23,7 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia"
 import {NThing, NResult, NIcon, NButton} from 'naive-ui'
-const { pageType:pageType } = defineProps(['pageType'])
+// const { pageType:pageType } = defineProps(['pageType'])
 const router = useRoute()
 const articleStore = useStore.useArticleStore()
 

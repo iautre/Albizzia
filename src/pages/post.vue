@@ -27,7 +27,7 @@ const { pageType:pageType } = defineProps(['pageType'])
 const router = useRoute()
 const articleStore = useStore.useArticleStore()
 
-await articleStore.getArticleData(router.params.cid as string, router.params.slug as string)
+await articleStore.getArticleData(router.params.slug as string)
 const { articleData } = storeToRefs(articleStore)
 </script>
 <style>

@@ -122,8 +122,3 @@ const menus: MenuOption[] = [
 //   // {key: '5', title: '邮箱', icon: 'mdi-at', path: ''},
 // ])
 </script>
-<style>
-.mymain {
-//position: fixed; z-index: 9999;width: 200px;box-shadow: none;background:none;
-}
-</style>

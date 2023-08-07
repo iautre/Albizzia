@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-import {articlePage, getArticle, PageModel, Article, getPage} from '@/api/index'
+import {articlePage, getArticle, PageModel, Article} from '@/api/index'
 
 export const useArticleStore = defineStore('ArticleData', () => {
 
@@ -11,15 +11,9 @@ export const useArticleStore = defineStore('ArticleData', () => {
     const list = await articlePage({page:page, category: category})
     articleList.value = list || []
   }
-  const getArticleData = async (cid:string|null = null, slug:string|null=null) => {
-    if (cid){
-      const data = await getArticle(cid)
+  const getArticleData = async (slug:string) => {
+      const data = await getArticle(slug)
       articleData.value = data
-    }else if (slug) {
-      const data = await getPage(slug)
-      articleData.value = data
-    }
-
   }
 
 

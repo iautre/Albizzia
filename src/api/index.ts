@@ -39,11 +39,7 @@ export const articlePage = async (params:any)=>{
     const result =  await request<Array<Article>>("/posts", {params:params})
     return result
 }
-export const getArticle = async (cid:string)=>{
-    const result =  await request<Article>(`/post2?cid=${cid}`)
-    return result
-}
-export const getPage = async (slug:string)=>{
-    const result =  await request<Article>(`/page?slug=${slug}`)
+export const getArticle = async (slug:string)=>{
+    const result =  await request<Article>(`/post?slug=${slug}`)
     return result
 }

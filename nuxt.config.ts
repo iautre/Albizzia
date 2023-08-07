@@ -15,7 +15,8 @@ export default defineNuxtConfig({
       title: '有风小站',
       meta: [
         // <meta name="description" content="My amazing site">
-        { name: 'description', content: '有风小站.' }
+        { name: 'description', content: '有风小站.' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'}
       ],
     },
     pageTransition: {
@@ -34,7 +35,7 @@ export default defineNuxtConfig({
     '@/assets/css/main.css',
   ],
   plugins: [
-    
+
   ],
 
   nitro: {

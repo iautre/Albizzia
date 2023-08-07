@@ -14,7 +14,7 @@
         <n-list-item v-if="articleList.length > 0" v-for="(item, index) in articleList" :key="item.cid" :style="index===0 ? 'padding-top:0;': ''">
           <n-thing>
             <template #header>
-              <NuxtLink :to="'/'+item.cid + '.html'">
+              <NuxtLink :to="'/'+item.slug">
                 {{ item.title }}
               </NuxtLink>
             </template>

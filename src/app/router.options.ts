@@ -11,12 +11,12 @@ export default <RouterConfig>{
             path: "/page/:page",
             component: () => import("~/pages/page.vue"),
         },
-        {
-            name: "post",
-            path: "/:cid.html",
-            props: {pageType: 'post'},
-            component: () => import("~/pages/post.vue"),
-        },
+        // {
+        //     name: "post",
+        //     path: "/:cid.html",
+        //     props: {pageType: 'post'},
+        //     component: () => import("~/pages/post.vue"),
+        // },
         {
             name: "category",
             path: "/topic/:category",
@@ -35,7 +35,7 @@ export default <RouterConfig>{
         {
             name: "page",
             path: "/:slug",
-            props: {pageType: 'page'},
+            // props: {pageType: 'page'},
             component: () => import("~/pages/post.vue"),
         },
     ],

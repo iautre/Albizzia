@@ -1,8 +1,8 @@
 <template>
   <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
       <div ref="mainContainerRef">
-        <n-layout has-sider style="width: 1200px;margin: 12px auto 12px;min-height:calc(100vh - 74px)">
-          <n-layout-header style="width: 224px; padding:12px;">
+        <n-layout :has-sider="bigHeader || hasSider" style="max-width: 1200px;width:100%;margin: 12px auto 12px;min-height:calc(100vh - 74px)">
+          <n-layout-header v-if="bigHeader" style="width: 224px; padding:12px;">
             <div style="width: 200px;"></div>
             <n-affix
                 :trigger-top="24"
@@ -15,7 +15,7 @@
           <n-layout-content style="padding:12px;">
             <slot/>
           </n-layout-content>
-          <n-layout-sider content-style="padding: 12px;max-width:324px;" style="width: 324px;max-width: 324px;">
+          <n-layout-sider v-if="hasSider" content-style="padding: 12px;max-width:324px;" style="width: 324px;max-width: 324px;">
             <Sider/>
           </n-layout-sider>
         </n-layout>
@@ -32,5 +32,7 @@ import {
   NLayoutSider,NLayoutFooter, zhCN, dateZhCN, NAffix, NBackTop,
 } from 'naive-ui'
 
+const {width, bigHeader, hasSider} = useStore.useAppSetStore()
 const mainContainerRef = ref<HTMLElement | undefined>(undefined)
+
 </script>

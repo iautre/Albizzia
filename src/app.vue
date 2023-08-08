@@ -4,6 +4,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-const {resetWidth} = useStore.useAppSetStore()
-window.addEventListener('resize', resetWidth)
+const {resetWidth} = useStore.useScreenStore()
+onBeforeMount(() => {
+  window.addEventListener('resize', resetWidth)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', resetWidth);
+})
+
 </script>

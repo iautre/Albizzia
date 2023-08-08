@@ -1,10 +1,10 @@
 import {useArticleStore} from "./useArticleStore"
-import {useAppSetStore} from "~/composables/stores/app";
- 
+import {useScreenStore} from './screen'
+
 //模块
 const stores = {
     useArticleStore,
-    useAppSetStore
+    useScreenStore
 }
- 
+
 export default stores

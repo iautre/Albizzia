@@ -1,6 +1,7 @@
 <template>
   <div>
   <NuxtLayout>
+    <div style="margin: 12px;">
     <n-result v-if="!articleData" status="404" title="404 资源不存在" description="生活总归带点荒谬" style="margin-top: 20px;">
       <template #footer>
         <NuxtLink to="/">
@@ -8,7 +9,7 @@
         </NuxtLink>
       </template>
     </n-result>
-    <n-thing v-if="articleData">
+    <n-thing v-if="articleData" style="margin-top: 12px;">
       <template #header>
         {{ articleData.title }}
       </template>
@@ -17,6 +18,7 @@
        </template>
       <MarkdwonText :text="articleData.text" />
     </n-thing>
+    </div>
   </NuxtLayout>
   </div>
 </template>

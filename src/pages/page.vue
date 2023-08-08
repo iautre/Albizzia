@@ -1,6 +1,7 @@
 <template>
   <div>
-    <NuxtLayout>
+    <NuxtLayout >
+      <div style="margin: 0 12px;">
       <n-list>
         <n-empty v-if="articleList.length === 0" description="你什么也找不到" style="margin-top: 100px;;">
           <template #extra>
@@ -11,7 +12,7 @@
             </NuxtLink>
           </template>
         </n-empty>
-        <n-list-item v-if="articleList.length > 0" v-for="(item, index) in articleList" :key="item.cid" :style="index===0 ? 'padding-top:0;': ''">
+        <n-list-item v-if="articleList.length > 0" v-for="(item, index) in articleList" :key="item.cid">
           <n-thing>
             <template #header>
               <NuxtLink :to="'/'+item.slug">
@@ -41,6 +42,7 @@
           </n-space>
         </template>
       </n-list>
+      </div>
     </NuxtLayout>
   </div>
 </template>

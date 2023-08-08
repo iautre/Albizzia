@@ -1,6 +1,4 @@
 import {request} from '@/utils/request'
-import exp from "constants";
-
 
 export interface PageModel<T> {
     records: T[],
@@ -36,10 +34,8 @@ export interface Thumb {
     firstimg: string
 }
 export const articlePage = async (params:any)=>{
-    const result =  await request<Array<Article>>("/posts", {params:params})
-    return result
+    return await request<Array<Article>>("/posts", {params:params})
 }
 export const getArticle = async (slug:string)=>{
-    const result =  await request<Article>(`/post?slug=${slug}`)
-    return result
+    return await request<Article>(`/post?slug=${slug}`)
 }

@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   pages: true,
   modules: [
     '@nuxt/content',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    // '@nuxtjs/eslint-module',
   ],
   app: {
     head: {
@@ -37,7 +38,9 @@ export default defineNuxtConfig({
   plugins: [
 
   ],
-
+  eslint: {
+    /* module options */
+  },
   nitro: {
     devProxy: {
       "/api": {

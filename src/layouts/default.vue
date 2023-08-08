@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <Title>{{ title? title + ' - 有风小站' : '有风小站' }}</Title>
+    <Meta name="description" :content="title" />
+  </Head>
   <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
     <div ref="mainContainerRef">
       <n-layout style="max-width: 1200px;width:100%;margin: 0 auto;min-height:calc(100vh - 74px)">
@@ -39,9 +43,9 @@ import {
   NLayoutSider, NLayoutFooter, zhCN, dateZhCN, NAffix, NBackTop,
 } from 'naive-ui'
 import {storeToRefs} from 'pinia'
-import {useScreenStore} from '~/composables/stores/screen'
 
 const {largePage} = defineProps({
+  title: {type:String, default: null},
   largePage: {type: Boolean, default: false}
 })
 const {large, medium, small} = storeToRefs(useStore.useScreenStore())

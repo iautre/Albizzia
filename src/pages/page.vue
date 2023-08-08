@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLayout >
+    <NuxtLayout :title="articleList.length === 0 ?'404':'分页'">
       <div style="margin: 0 12px;">
       <n-list>
         <n-empty v-if="articleList.length === 0" description="你什么也找不到" style="margin-top: 100px;;">

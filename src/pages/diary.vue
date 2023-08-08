@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLayout largePage>
+    <NuxtLayout largePage title="说说">
       <div :style="large || medium ? 'margin: 12px;': ''">
         <n-card content-style="padding: 0 12px;">
           <template #cover>

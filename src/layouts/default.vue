@@ -4,6 +4,7 @@
     <Meta name="description" :content="title" />
   </Head>
   <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
+    <n-scrollbar style="height: 100vh;">
     <div ref="mainContainerRef">
       <n-layout style="max-width: 1200px;width:100%;margin: 0 auto;min-height:calc(100vh - 74px)">
         <n-layout-header v-if="medium || (small && !largePage)">
@@ -35,11 +36,12 @@
       </n-layout-footer>
       <n-back-top :right="100"/>
     </div>
+    </n-scrollbar>
   </n-config-provider>
 </template>
 <script lang="ts" setup>
 import {
-  NConfigProvider, NLayout, NLayoutHeader, NLayoutContent,
+  NConfigProvider,NScrollbar, NLayout, NLayoutHeader, NLayoutContent,
   NLayoutSider, NLayoutFooter, zhCN, dateZhCN, NAffix, NBackTop,
 } from 'naive-ui'
 import {storeToRefs} from 'pinia'

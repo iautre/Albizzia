@@ -8,7 +8,8 @@
     <div ref="mainContainerRef">
       <n-layout style="max-width: 1200px;width:100%;margin: 0 auto;min-height:calc(100vh - 74px)">
         <n-layout-header v-if="medium || (small && !largePage)">
-          <MenuDropdown/>
+          <MenuDrawer/>
+          <n-divider style="margin: 0;"/>
         </n-layout-header>
         <n-layout :has-sider="large || medium">
           <n-layout-header v-if="large" style="width: 200px; margin:12px 0 12px 12px;">
@@ -41,8 +42,8 @@
 </template>
 <script lang="ts" setup>
 import {
-  NConfigProvider,NScrollbar, NLayout, NLayoutHeader, NLayoutContent,
-  NLayoutSider, NLayoutFooter, zhCN, dateZhCN, NAffix, NBackTop,
+  NConfigProvider, NScrollbar, NLayout, NLayoutHeader, NLayoutContent,
+  NLayoutSider, NLayoutFooter, zhCN, dateZhCN, NAffix, NBackTop, NDivider,
 } from 'naive-ui'
 import {storeToRefs} from 'pinia'
 

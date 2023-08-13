@@ -20,12 +20,11 @@ export interface Article {
     categories: Array<Category>,
     tag:Array<Tag>,
     thumb: Thumb,
+    imgs: Array<string>
 }
 export interface Category {
-    cid: number,
     name:string,
     slug:string,
-    permalink:string,
 }
 export interface Tag {
     name:string
@@ -38,4 +37,16 @@ export const articlePage = async (params:any)=>{
 }
 export const getArticle = async (slug:string)=>{
     return await request<Article>(`/post?slug=${slug}`)
+}
+export const getCategories= async ()=>{
+    return await request<Array<Category>>(`/categories`)
+}
+export const getTags = async ()=>{
+    return await request<Array<Tag>>(`/tags`)
+}
+export const getCategory = async (slug:string)=>{
+    return await request<Category>(`/category?slug=${slug}`)
+}
+export const getTag = async (name:string)=>{
+    return await request<Tag>(`/tag?name=${name}`)
 }

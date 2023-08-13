@@ -14,7 +14,7 @@
 <!--  </NuxtLink>-->
   <NuxtLink to="/">
     <n-space style="padding-left: 38px;padding-bottom: 12px;">
-    <div style="font-size: 16px;">有风小站</div>
+      <MenuTitle />
     </n-space>
   </NuxtLink>
 <!--  <n-divider style="margin: 0 32px 0"></n-divider>-->
@@ -28,6 +28,7 @@ const {mode} = defineProps({
 })
 
 import {NuxtLink} from '#components'
+import MenuTitle from '~/components/MenuTitle.vue'
 
 // import {menuOptions} from '~/composables/menus'
 

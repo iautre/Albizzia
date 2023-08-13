@@ -1,28 +1,26 @@
 <template>
   <div >
-  <n-space justify="space-between" style="margin-bottom: 0;padding-bottom: 0;">
-    <NuxtLink to="/">
-      <n-button text style="margin: 12px 12px;">
-        <MenuTitle />
-    </n-button>
-  </NuxtLink>
-  <n-dropdown
-      :options="menus"
-      placement="bottom-end"
-      trigger="click"
-  >
-    <n-button text style="margin: 12px;">
-      <template #icon>
-        <n-icon size="26" :component="ReorderFourOutline"></n-icon>
-      </template>
-    </n-button>
-  </n-dropdown>
-  </n-space>
+    <n-space justify="space-between" style="margin-bottom: 0;padding-bottom: 0;">
+      <NuxtLink to="/">
+        <n-button text style="margin: 12px 12px;">
+          <MenuTitle />
+        </n-button>
+      </NuxtLink>
+      <n-button text @click="active = true" style="margin: 12px;">
+        <template #icon>
+          <n-icon size="26" :component="ReorderFourOutline"></n-icon>
+        </template>
+      </n-button>
+    </n-space>
+    <n-drawer v-model:show="active"  placement="right">
+      <n-drawer-content body-content-style="padding: 12px;">
+        <n-menu :options="menus"/>
+      </n-drawer-content>
+    </n-drawer>
   </div>
-  <n-divider style="margin: 0"/>
 </template>
 <script lang="ts" setup>
-import {NDropdown, NIcon, NDivider, NSpace, NButton} from 'naive-ui'
+import {NDropdown, NIcon, NDivider, NSpace, NButton, NMenu, NDrawer, NDrawerContent} from 'naive-ui'
 import type {MenuOption} from 'naive-ui'
 const {mode} = defineProps({
   mode:{type: String, default: 'vertical'}
@@ -38,7 +36,7 @@ import {
   WifiOutline,
 } from '@vicons/ionicons5'
 import MenuTitle from '~/components/MenuTitle.vue'
-
+const active = ref(false)
 const renderIcon = (icon: Component) => {
   return () => h(NIcon, null, {default: () => h(icon)})
 }
@@ -51,7 +49,7 @@ const menus: MenuOption[] = [
     label: renderLabelN('有风小站', '/'),
     icon: renderIcon(HomeOutline),
   },
-    ...menuOptions
+  ...menuOptions
 ]
 
 // const links = ref([

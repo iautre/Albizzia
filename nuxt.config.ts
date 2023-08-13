@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     // '@nuxtjs/eslint-module',
   ],
   app: {
+    buildAssetsDir: "/static/",
     head: {
       charset: 'utf-16',
       viewport: 'width=500, initial-scale=1',
@@ -19,6 +20,9 @@ export default defineNuxtConfig({
         { name: 'description', content: '有风小站.' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'}
       ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ]
     },
     pageTransition: {
       name: 'fade',

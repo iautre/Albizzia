@@ -47,7 +47,7 @@
         </n-carousel>
     <NuxtLink to="/topic/pai">
       <n-image
-          :preview-disabled="false"
+          :preview-disabled="true"
           width="300"
           src="https://p1.imoxin.net/634c2a6fcbc9e0b3e5d34a8b/1!post"
       />
@@ -87,7 +87,7 @@
   </n-space>
 </template>
 <script lang="ts" setup>
-import {NSpace, NImage, NCarousel, NTimeline, NTimelineItem} from 'naive-ui'
+import {NSpace, NImage, NCarousel, NAnchor, NAnchorLink,NAffix, NTimeline, NTimelineItem} from 'naive-ui'
 </script>
 <style scoped>
 .carousel-img {

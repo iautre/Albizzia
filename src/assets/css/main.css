@@ -17,3 +17,6 @@ h3{
 img {
     width: 100%;
 }
+.n-thing-main, .n-list-item__main{
+    width: 100%;
+}

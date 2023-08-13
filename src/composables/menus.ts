@@ -13,8 +13,7 @@ const renderIcon = (icon: Component) => {
 const renderLabelN = (label: string, path: string) => {
     return () => h(NuxtLink, {to: path}, {default: () => label})
 }
-export const menuOptions = useState('menuOptions', ():MenuOption[]=> {
-    return  [
+export const menuOptions :MenuOption[]=  [
         // {
         //   key: '1',
         //   label: renderLabelN('有风小站', '/'),
@@ -87,4 +86,4 @@ export const menuOptions = useState('menuOptions', ():MenuOption[]=> {
             icon: renderIcon(RadioOutline), path: 'https://autre.cn/bh4ghm'
         },
     ]
-})
+

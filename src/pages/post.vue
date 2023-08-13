@@ -9,14 +9,14 @@
         </NuxtLink>
       </template>
     </n-result>
-    <n-thing v-if="articleData" style="margin-top: 12px;">
+    <n-thing v-if="articleData" style="margin-top: 12px; width: 100%;">
       <template #header>
         {{ articleData.title }}
       </template>
       <template v-if="articleData.type === 'post'" #description>
         <ContentHeader :timeUnixStr="articleData.created" :categories="articleData.categories" :tags="articleData.tag" />
        </template>
-      <MarkdwonText :text="articleData.text" />
+      <MarkdownText :text="articleData.text" />
     </n-thing>
     </div>
   </NuxtLayout>
@@ -26,10 +26,13 @@
 import { storeToRefs } from "pinia"
 import {NThing, NResult, NIcon, NButton} from 'naive-ui'
 // const { pageType:pageType } = defineProps(['pageType'])
-const router = useRoute()
+const {slug} = defineProps({
+  slug: {type: String, default: ''},
+})
+// const router = useRoute()
 const articleStore = useStore.useArticleStore()
 
-await articleStore.getArticleData(router.params.slug as string)
+await articleStore.getArticleData(slug)
 const { articleData } = storeToRefs(articleStore)
 </script>
 <style>

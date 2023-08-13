@@ -10,6 +10,7 @@ export default <RouterConfig>{
             name: "indexPage",
             path: "/page/:page",
             component: () => import("~/pages/page.vue"),
+            props: true,
         },
         // {
         //     name: "post",
@@ -21,22 +22,26 @@ export default <RouterConfig>{
             name: "category",
             path: "/topic/:category",
             component: () => import("~/pages/page.vue"),
+            props: true,
         },
         {
             name: "categoryPage",
             path: "/topic/:category/:page",
             component: () => import("~/pages/page.vue"),
+            props: true,
         },
         {
             name: "diary",
             path: "/diary",
             component: () => import("~/pages/diary.vue"),
+            meta: {title: '说说'}
         },
         {
             name: "page",
             path: "/:slug",
             // props: {pageType: 'page'},
             component: () => import("~/pages/post.vue"),
+            props: true,
         },
     ],
 };

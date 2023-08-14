@@ -4,7 +4,7 @@
           direction="vertical"
           dot-placement="right"
           mousewheel
-          style="width: 100%;height: 200px;margin-bottom: 6px;"
+          style="width: 100%;height: 240px;margin-bottom: 6px;"
       >
         <NuxtLink to="/my-biaoben"><img
             class="carousel-img"
@@ -30,7 +30,7 @@
             direction="vertical"
             dot-placement="right"
             mousewheel
-            style="width: 100%;height: 200px;margin-bottom: 6px;"
+            style="width: 100%;height: 240px;margin-bottom: 6px;"
         >
           <NuxtLink to="/100flower"><img
               class="carousel-img"

@@ -20,7 +20,7 @@
               </NuxtLink>
             </template>
             <template #description>
-              <ContentHeader :timeUnixStr="item.created" :categories="item.categories" :tags="item.tag"/>
+              <ContentHeader :timeUnixStr="item.created" :categories="item.categories" :tags="item.tag" :gps="item.thumb?.gps"/>
             </template>
             <n-ellipsis :line-clamp="2" :tooltip="false" style="width: 100%;">
               <MarkdownText :text="item.text"/>
@@ -29,12 +29,12 @@
         </n-list-item>
         <template #footer>
           <n-space justify="center">
-            <NuxtLink v-if="page>1" :to="(category ? '/topic/' + category + '/' : '/page/')+ (page -1)">
+            <NuxtLink v-if="page>1" :to="(category ? '/topic/' + category + '/' : '/page/')+ (Number(page) - 1)">
               <n-button round>
                 上一页
               </n-button>
             </NuxtLink>
-            <NuxtLink v-if="articleList.length === 5" :to="(category ? '/topic/' + category + '/' : '/page/')+ (page + 1)">
+            <NuxtLink v-if="articleList.length === 5" :to="(category ? '/topic/' + category + '/' : '/page/')+ (Number(page) + 1)">
               <n-button round>
                 下一页
               </n-button>

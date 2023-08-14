@@ -10,16 +10,16 @@
       <template #icon>
         <n-icon :component="ReorderFourOutline"></n-icon>
       </template>
-      <template v-for="category in categories" :key="category.cid">
-        {{ category.name }}
+      <template v-for="(category, index) in categories" :key="category.cid">
+        {{ index !== 0 ? ' ' + category.name : category.name}}
       </template>
     </n-button>
     <n-button text v-if="tags && tags.length > 0">
       <template #icon>
         <n-icon :component="PricetagsOutline"></n-icon>
       </template>
-      <template v-for="tag in tags" :key="tag.name">
-        {{ tag.name }}
+      <template v-for="(tag, index) in tags" :key="tag.name">
+        {{ index !== 0 ? ' ' + tag.name : tag.name }}
       </template>
     </n-button>
     <n-button text v-if="gps">

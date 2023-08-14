@@ -14,7 +14,7 @@
         {{ articleData.title }}
       </template>
       <template v-if="articleData.type === 'post'" #description>
-        <ContentHeader :timeUnixStr="articleData.created" :categories="articleData.categories" :tags="articleData.tag" />
+        <ContentHeader :timeUnixStr="articleData.created" :categories="articleData.categories" :tags="articleData.tag" :gps="articleData.thumb?.gps" />
        </template>
       <MarkdownText :text="articleData.text" />
     </n-thing>
@@ -29,7 +29,6 @@ import {NThing, NResult, NIcon, NButton} from 'naive-ui'
 const {slug} = defineProps({
   slug: {type: String, default: ''},
 })
-// const router = useRoute()
 const articleStore = useStore.useArticleStore()
 
 await articleStore.getArticleData(slug)

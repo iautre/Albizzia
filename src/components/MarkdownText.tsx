@@ -1,6 +1,6 @@
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
-import {NCode, NImage, NScrollbar} from 'naive-ui'
+import {NCode, NImage} from 'naive-ui'
 import {Marked} from 'marked'
 import {markedHighlight} from "marked-highlight"
 import {VNode} from '@vue/runtime-core'
@@ -80,7 +80,6 @@ export default defineComponent({
     render: (props: { text: string }) => {
         let htmlDivElement = document.createElement('div')
         htmlDivElement.innerHTML = marked.parse(props.text)
-        // debugger
         return html2VNode(htmlDivElement)
     }
 })

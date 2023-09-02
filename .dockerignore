@@ -1,0 +1,13 @@
+.nuxt
+.output
+cmd
+node_modules
+#src
+#*.json
+#*.ymal
+#*.md
+#*.psd
+#Jenkinsfile
+#.npmrc
+#.gitignore
+#*.ts

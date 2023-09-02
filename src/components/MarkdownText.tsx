@@ -4,7 +4,7 @@ import {NCode, NImage} from 'naive-ui'
 import {Marked} from 'marked'
 import {markedHighlight} from "marked-highlight"
 import {VNode} from '@vue/runtime-core'
-import {NuxtLink} from "#components";
+import {NuxtLink} from "#components"
 
 
 const marked = new Marked(
@@ -78,8 +78,13 @@ export default defineComponent({
         text: {type: String, default: ''}
     },
     render: (props: { text: string }) => {
-        let htmlDivElement = document.createElement('div')
-        htmlDivElement.innerHTML = marked.parse(props.text)
-        return html2VNode(htmlDivElement)
+        let htmlString = marked.parse(props.text) as string
+        // let htmlDivElement = document.createElement('div')
+        // htmlDivElement.innerHTML = marked.parse(props.text)
+        // return html2VNode(htmlDivElement)
+        // return h('div', {'v-html': htmlString})
+        return (
+            <div v-html={htmlString}></div>
+        )
     }
 })

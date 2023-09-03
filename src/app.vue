@@ -11,5 +11,9 @@ onBeforeMount(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('resize', resetWidth);
 })
+onMounted(()=>{
+  resetWidth()
+  window.addEventListener('resize', resetWidth)
+})
 
 </script>

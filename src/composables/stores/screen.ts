@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useScreenStore = defineStore('useScreenStore', () => {
 
-    const width = ref<number>(process.client ? document.body.getBoundingClientRect().width : 1200)
+    const width = ref<number>(process.client ? document.body.getBoundingClientRect().width : 719)
 
     const large = computed<boolean>(()=>{
         return  width.value >= 1000
@@ -14,7 +14,7 @@ export const useScreenStore = defineStore('useScreenStore', () => {
         return width.value < 720
     })
     const resetWidth =  () => {
-        width.value = process.client ? document.body.getBoundingClientRect().width : 1200
+        width.value = process.client ? document.body.getBoundingClientRect().width : 719
     }
 
     return { width,large,medium,small, resetWidth}

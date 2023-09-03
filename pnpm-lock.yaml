@@ -17,6 +17,9 @@ dependencies:
   marked-highlight:
     specifier: ^2.0.4
     version: 2.0.4(marked@7.0.1)
+  marked2vue:
+    specifier: ^1.1.3
+    version: 1.1.3
   pinia:
     specifier: ^2.1.4
     version: 2.1.6(vue@3.3.4)
@@ -37,6 +40,9 @@ devDependencies:
   '@vicons/ionicons5':
     specifier: ^0.12.0
     version: 0.12.0
+  '@vue/compiler-sfc':
+    specifier: ^3.3.4
+    version: 3.3.4
   naive-ui:
     specifier: ^2.34.4
     version: 2.34.4(vue@3.3.4)
@@ -1196,7 +1202,7 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.0.3
       postcss-import-resolver: 2.0.0
-      std-env: 3.3.3
+      std-env: 3.4.3
       ufo: 1.3.0
       unimport: 3.2.0(rollup@3.27.0)
       untyped: 1.4.0
@@ -1245,7 +1251,7 @@ packages:
       ofetch: 1.3.3
       parse-git-config: 3.0.0
       rc9: 2.1.1
-      std-env: 3.3.3
+      std-env: 3.4.3
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -1278,7 +1284,7 @@ packages:
       get-port-please: 3.0.2
       h3: 1.8.1
       knitwork: 1.0.0
-      magic-string: 0.30.2
+      magic-string: 0.30.3
       mlly: 1.4.1
       ohash: 1.1.3
       pathe: 1.1.1
@@ -1288,8 +1294,8 @@ packages:
       postcss-import: 15.1.0(postcss@8.4.27)
       postcss-url: 10.1.3(postcss@8.4.27)
       rollup-plugin-visualizer: 5.9.2(rollup@3.27.0)
-      std-env: 3.3.3
-      strip-literal: 1.0.1
+      std-env: 3.4.3
+      strip-literal: 1.3.0
       ufo: 1.3.0
       unplugin: 1.4.0
       vite: 4.3.9(@types/node@18.17.1)(sass@1.64.2)
@@ -1465,20 +1471,6 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
     dev: true
-
-  /@rollup/pluginutils@5.0.2(rollup@3.27.0):
-    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-    dependencies:
-      '@types/estree': 1.0.1
-      estree-walker: 2.0.2
-      picomatch: 2.3.1
-      rollup: 3.27.0
 
   /@rollup/pluginutils@5.0.4(rollup@3.27.0):
     resolution: {integrity: sha512-0KJnIoRI8A+a1dqOYLxH8vBf8bphDmty5QvIm2hqm7oFCFYKCAZWWd2hXgMibaPsNDhI0AtpYfQZJG47pt/k4g==}
@@ -1791,7 +1783,7 @@ packages:
       '@vue/reactivity-transform': 3.3.4
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
-      magic-string: 0.30.2
+      magic-string: 0.30.3
       postcss: 8.4.27
       source-map-js: 1.0.2
 
@@ -3562,7 +3554,7 @@ packages:
       defu: 6.1.2
       destr: 2.0.1
       iron-webcrypto: 0.7.1
-      radix3: 1.0.1
+      radix3: 1.1.0
       ufo: 1.3.0
       uncrypto: 0.1.3
     dev: true
@@ -4352,6 +4344,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
+    dev: true
 
   /magic-string@0.30.3:
     resolution: {integrity: sha512-B7xGbll2fG/VjP+SWg4sX3JynwIU0mjoTc6MPpKNuIvftk6u6vqhDnk1R80b8C2GBR6ywqy+1DcKBrevBg+bmw==}
@@ -4433,6 +4426,10 @@ packages:
       marked: ^4 || ^5 || ^6 || ^7
     dependencies:
       marked: 7.0.1
+    dev: false
+
+  /marked2vue@1.1.3:
+    resolution: {integrity: sha512-RQf362jKOzdEwsc396CVfwdkf5uOPfpped+pwqAk2j7VxKC/nT8F8lhSXfZENWvrJVNv7XNEycW55Du1ori6Gw==}
     dev: false
 
   /marked@7.0.1:
@@ -5096,7 +5093,7 @@ packages:
       '@rollup/plugin-replace': 5.0.2(rollup@3.27.0)
       '@rollup/plugin-terser': 0.4.3(rollup@3.27.0)
       '@rollup/plugin-wasm': 6.1.3(rollup@3.27.0)
-      '@rollup/pluginutils': 5.0.2(rollup@3.27.0)
+      '@rollup/pluginutils': 5.0.4(rollup@3.27.0)
       '@types/http-proxy': 1.17.11
       '@vercel/nft': 0.22.6
       archiver: 5.3.1
@@ -5124,7 +5121,7 @@ packages:
       klona: 2.0.6
       knitwork: 1.0.0
       listhen: 1.1.2
-      magic-string: 0.30.2
+      magic-string: 0.30.3
       mime: 3.0.0
       mlly: 1.4.1
       mri: 1.2.0
@@ -5136,7 +5133,7 @@ packages:
       perfect-debounce: 1.0.0
       pkg-types: 1.0.3
       pretty-bytes: 6.1.1
-      radix3: 1.0.1
+      radix3: 1.1.0
       rollup: 3.27.0
       rollup-plugin-visualizer: 5.9.2(rollup@3.27.0)
       scule: 1.0.0
@@ -5144,10 +5141,10 @@ packages:
       serve-placeholder: 2.0.1
       serve-static: 1.15.0
       source-map-support: 0.5.21
-      std-env: 3.3.3
+      std-env: 3.4.3
       ufo: 1.3.0
       uncrypto: 0.1.3
-      unenv: 1.5.2
+      unenv: 1.7.4
       unimport: 3.2.0(rollup@3.27.0)
       unstorage: 1.8.0
     transitivePeerDependencies:
@@ -6138,10 +6135,6 @@ packages:
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  /radix3@1.0.1:
-    resolution: {integrity: sha512-y+AcwZ3HcUIGc9zGsNVf5+BY/LxL+z+4h4J3/pp8jxSmy1STaCocPS3qrj4tA5ehUSzqtqK+0Aygvz/r/8vy4g==}
-    dev: true
-
   /radix3@1.1.0:
     resolution: {integrity: sha512-pNsHDxbGORSvuSScqNJ+3Km6QAVqk8CfsCBIEoDgpqLrkD2f3QM4I7d1ozJJ172OmIcoUcerZaNWqtLkRXTV3A==}
     dev: true
@@ -6755,12 +6748,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /std-env@3.3.3:
-    resolution: {integrity: sha512-Rz6yejtVyWnVjC1RFvNmYL10kgjC49EOghxWn0RFqlCHGFpQx+Xe7yW3I4ceK1SGrWIGMjD5Kbue8W/udkbMJg==}
-
   /std-env@3.4.3:
     resolution: {integrity: sha512-f9aPhy8fYBuMN+sNfakZV18U39PbalgjXG3lLB9WkaYTxijru61wb57V9wxxNthXM5Sd88ETBWi29qLAsHO52Q==}
-    dev: true
 
   /streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
@@ -6837,6 +6826,7 @@ packages:
     resolution: {integrity: sha512-QZTsipNpa2Ppr6v1AmJHESqJ3Uz247MUS0OjrnnZjFAvEoWqxuyFuXn2xLgMtRnijJShAa1HL0gtJyUs7u7n3Q==}
     dependencies:
       acorn: 8.10.0
+    dev: true
 
   /strip-literal@1.3.0:
     resolution: {integrity: sha512-PugKzOsyXpArk0yWmUwqOZecSO0GH0bPoctLcqNDH9J04pVW3lflYE0ujElBGTloevcxF5MofAOZ7C5l2b+wLg==}
@@ -7065,7 +7055,7 @@ packages:
     dependencies:
       acorn: 8.10.0
       estree-walker: 3.0.3
-      magic-string: 0.30.2
+      magic-string: 0.30.3
       unplugin: 1.4.0
 
   /undici@5.22.1:
@@ -7119,16 +7109,16 @@ packages:
   /unimport@3.1.0:
     resolution: {integrity: sha512-ybK3NVWh30MdiqSyqakrrQOeiXyu5507tDA0tUf7VJHrsq4DM6S43gR7oAsZaFojM32hzX982Lqw02D3yf2aiA==}
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.27.0)
+      '@rollup/pluginutils': 5.0.4(rollup@3.27.0)
       escape-string-regexp: 5.0.0
       fast-glob: 3.3.1
       local-pkg: 0.4.3
-      magic-string: 0.30.2
+      magic-string: 0.30.3
       mlly: 1.4.1
       pathe: 1.1.1
       pkg-types: 1.0.3
       scule: 1.0.0
-      strip-literal: 1.0.1
+      strip-literal: 1.3.0
       unplugin: 1.4.0
     transitivePeerDependencies:
       - rollup
@@ -7254,7 +7244,7 @@ packages:
         optional: true
     dependencies:
       '@babel/types': 7.22.5
-      '@rollup/pluginutils': 5.0.2(rollup@3.27.0)
+      '@rollup/pluginutils': 5.0.4(rollup@3.27.0)
       '@vue-macros/common': 1.6.0(vue@3.3.4)
       ast-walker-scope: 0.4.2
       chokidar: 3.5.3

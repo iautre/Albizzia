@@ -1,5 +1,5 @@
 <template>
-  <n-space justify="center" style="padding-top: 12px; padding-bottom: 12px;">
+  <n-space justify="center" style="padding: 12px;">
     <div> © <n-time :time="new Date()" format="yyyy"/></div>
     <a href="https://autre.me">有风小站</a>
     <a href="https://autre.me">Autre.me</a>

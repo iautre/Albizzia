@@ -1,10 +1,10 @@
 <template>
   <div>
-    <NuxtLayout largePage title="说说">
-      <div :style="large || medium ? 'margin: 12px;': ''">
+    <NuxtLayout diary title="说说">
+      <div class="top-top">
         <n-card content-style="padding: 0 12px;" style="--n-border-color:none;">
           <template #cover>
-            <div v-if="small" style="position: absolute;width: 100%;">
+            <div class="diary-top-header" style="position: absolute;width: 100%;">
               <MenuDrawer />
               <n-divider style="margin: 0;--n-color: #b3b0b0ba"/>
             </div>
@@ -48,3 +48,15 @@ const dateformat = (e: string) => {
 await aritcleStore.getArticleList(1, 'diary')
 const {articleList} = storeToRefs(aritcleStore)
 </script>
+<style scoped>
+@media screen and (min-width: 720px) {
+  .diary-top-header{
+    display: none;
+  }
+}
+@media screen and (min-width: 720px){
+  .top-top{
+    margin: 12px;
+  }
+}
+</style>

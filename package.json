@@ -1,5 +1,5 @@
 {
-  "name": "coding_web",
+  "name": "autre.me",
   "private": true,
   "scripts": {
     "build": "nuxt build",

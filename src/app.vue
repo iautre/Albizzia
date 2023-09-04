@@ -4,16 +4,18 @@
   </div>
 </template>
 <script lang="ts" setup>
-const {resetWidth} = useStore.useScreenStore()
+// const {width, resetWidth, spinOver} = useStore.useScreenStore()
 onBeforeMount(() => {
-  window.addEventListener('resize', resetWidth)
+  // resetWidth()
+  // window.addEventListener('resize', resetWidth)
 })
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', resetWidth);
+  // window.removeEventListener('resize', resetWidth);
 })
 onMounted(()=>{
-  resetWidth()
-  window.addEventListener('resize', resetWidth)
+  // resetWidth()
+  // window.addEventListener('resize', resetWidth)
+  // spinOver()
 })
 
 </script>

@@ -16,6 +16,7 @@ export interface Article {
     headImg?:string,
     description?:string,
     text: string,
+    text2: string,
     views: number,
     categories: Array<Category>,
     tag:Array<Tag>,

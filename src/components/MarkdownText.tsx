@@ -1,22 +1,22 @@
-import hljs from 'highlight.js'
-import 'highlight.js/styles/atom-one-dark.css'
-import {NCode, NImage} from 'naive-ui'
-import {Marked} from 'marked'
-import {markedHighlight} from "marked-highlight"
-import {VNode} from '@vue/runtime-core'
-import {NuxtLink} from '#components'
-import {VueParser, Lexer} from 'marked2vue'
+// import hljs from 'highlight.js'
+// import 'highlight.js/styles/atom-one-dark.css'
+// import {NCode, NImage} from 'naive-ui'
+// import {Marked} from 'marked'
+// import {markedHighlight} from "marked-highlight"
+// import {VNode} from '@vue/runtime-core'
+// import {NuxtLink} from '#components'
+// import {VueParser, Lexer} from 'marked2vue'
 
 
-const marked = new Marked(
-    markedHighlight({
-        langPrefix: 'hljs language-',
-        highlight(code: string, lang: string) {
-            const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-            return hljs.highlight(code, { language }).value;
-        }
-    })
-);
+// const marked = new Marked(
+//     markedHighlight({
+//         langPrefix: 'hljs language-',
+//         highlight(code: string, lang: string) {
+//             const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+//             return hljs.highlight(code, { language }).value;
+//         }
+//     })
+// );
 //
 // const childNode2VNode = (node: ChildNode):VNode|string|null => {
 //     if (node.nodeName === '#text') {
@@ -77,9 +77,13 @@ export default defineComponent({
         text: {type: String, default: ''}
     },
     render: (props: { text: string }) => {
-        const lexer = new Lexer() as any
-        const vueParser = new VueParser()
-        let vnode = vueParser.parse(lexer.lex(marked.parse(props.text)))
-        return h('div', vnode)
+        // const lexer = new Lexer() as any
+        // const vueParser = new VueParser()
+        // // let vnode = vueParser.parse(lexer.lex(marked.parse(props.text)))
+        // let vnode = vueParser.parse(lexer.lex(props.text))
+        // return h('div', vnode)
+        return (
+            <div v-html={props.text} ></div>
+        )
     }
 })

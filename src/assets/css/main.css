@@ -31,3 +31,6 @@ pre code {
     color: #abb2bf;
     background: #282c34;
 }
+.n-back-top{
+    z-index: 999;
+}

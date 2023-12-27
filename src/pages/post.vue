@@ -33,6 +33,7 @@ const articleStore = useStore.useArticleStore()
 
 await articleStore.getArticleData(slug)
 const { articleData } = storeToRefs(articleStore)
+
 </script>
 <style>
 

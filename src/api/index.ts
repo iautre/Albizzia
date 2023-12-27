@@ -21,8 +21,7 @@ export interface Article {
     categories: Array<Category>,
     tag:Array<Tag>,
     thumb: Thumb,
-    imgs: Array<string>,
-    type: string
+    imgs: Array<string>
 }
 export interface Category {
     name:string,

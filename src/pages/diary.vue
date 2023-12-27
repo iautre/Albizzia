@@ -18,17 +18,7 @@
           </template>
           <n-list>
             <n-list-item v-for="item in articleList" :key="item.cid">
-              <n-thing content-indented>
-<!--                <template #avatar>-->
-<!--                  <n-avatar-->
-<!--                      round-->
-<!--                      size="large"-->
-<!--                      src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"-->
-<!--                  />-->
-<!--                </template>-->
-                <template #header>
-                  「 {{item.title}} 」
-                </template>
+              <n-thing :title="item.title">
                 <template #header-extra>
                   <DateTimeFormat :timeUnixStr="item.created"/>
                 </template>
@@ -42,11 +32,9 @@
   </div>
 </template>
 <script lang="ts" setup>
-import {NCard, NDivider, NList, NListItem, NThing, NAvatar} from 'naive-ui'
+import {NCard, NDivider, NList, NListItem, NThing} from 'naive-ui'
 import {storeToRefs} from 'pinia'
-import {
-  ImageOutline,
-} from '@vicons/ionicons5'
+
 const aritcleStore = useStore.useArticleStore()
 const {large, medium, small} = storeToRefs(useStore.useScreenStore())
 const dateformat = (e: string) => {

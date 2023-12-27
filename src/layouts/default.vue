@@ -57,7 +57,9 @@ const {diary} = defineProps({
 const mainContainerRef = ref<HTMLElement | undefined>(undefined)
 </script>
 <style scoped>
-
+.n-back-top{
+  z-index: 999;
+}
 @media screen and (min-width: 1024px){
   .top-header {
     display: none;

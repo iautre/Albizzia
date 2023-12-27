@@ -12,7 +12,7 @@
                 style="object-fit: cover;"
                 height="240"
                 width="100%"
-                class="carousel-img"
+                class="carousel-img diary-top-img"
                 src="https://p1.imoxin.net/633fd686b8de3c83d51724fa/1!post"
             />
           </template>
@@ -49,12 +49,16 @@ await aritcleStore.getArticleList(1, 'diary')
 const {articleList} = storeToRefs(aritcleStore)
 </script>
 <style scoped>
-@media screen and (min-width: 720px) {
+@media screen and (max-width: 720px) {
+  .top-top .diary-top-img {
+    border-radius: 0!important;
+  }
+}
+
+@media screen and (min-width: 720px){
   .diary-top-header{
     display: none;
   }
-}
-@media screen and (min-width: 720px){
   .top-top{
     margin: 12px;
   }

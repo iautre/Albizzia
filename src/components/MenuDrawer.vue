@@ -2,11 +2,11 @@
   <div >
     <n-space justify="space-between" style="margin-bottom: 0;padding-bottom: 0;">
       <NuxtLink to="/">
-        <n-button text style="margin: 12px 12px;">
+        <n-button text style="margin: 12px 20px;">
           <MenuTitle />
         </n-button>
       </NuxtLink>
-      <n-button text @click="active = true" style="margin: 12px;">
+      <n-button text @click="active = true" style="margin: 12px 20px;">
         <template #icon>
           <n-icon size="26" :component="ReorderFourOutline"></n-icon>
         </template>

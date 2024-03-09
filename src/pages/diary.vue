@@ -2,7 +2,7 @@
   <div>
     <NuxtLayout diary title="说说">
       <div class="top-top">
-        <n-card content-style="padding: 0 12px;" style="--n-border-color:none;">
+        <n-card content-style="padding: 0 20px;" style="--n-border-color:none;">
           <template #cover>
             <div class="diary-top-header" style="position: absolute;width: 100%;">
               <MenuDrawer />
@@ -60,7 +60,7 @@ const {articleList} = storeToRefs(aritcleStore)
     display: none;
   }
   .top-top{
-    margin: 12px;
+    margin: 12px 20px;
   }
 }
 </style>

@@ -1,4 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 export default defineNuxtConfig({
   srcDir: 'src/',
   ssr: true,
@@ -70,9 +73,21 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include:
           process.env.NODE_ENV === 'development'
-              ? ['naive-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone']
+              ? ['naive-ui', 'vueuc']
               : []
-    }
+    },
+    plugins: [
+      AutoImport({
+        imports: [
+          {
+            'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar'],
+          },
+        ],
+      }),
+      Components({
+        resolvers: [NaiveUiResolver()]
+      })
+    ]
   }
   // pinia: {
   //   autoImports: [

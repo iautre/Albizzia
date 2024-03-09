@@ -34,7 +34,7 @@
                 上一页
               </n-button>
             </NuxtLink>
-            <NuxtLink v-if="articleList.length === 5" :to="(category ? '/topic/' + category + '/' : '/page/')+ (Number(page) + 1)">
+            <NuxtLink v-if="page < pages" :to="(category ? '/topic/' + category + '/' : '/page/')+ (Number(page) + 1)">
               <n-button round>
                 下一页
               </n-button>
@@ -47,7 +47,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import {NButton, NEmpty, NList, NListItem, NThing, NSpace, NCard, NEllipsis} from 'naive-ui'
 import {storeToRefs} from 'pinia'
 const {page, category} = defineProps({
   page: {type: Number, default: 1},
@@ -67,5 +66,5 @@ const title = computed(()=>{
   return Array.of(category, page !== 1 ? '第'+ page + '页': undefined).filter(e=>e).join(' - ')
 })
 await articleStore.getArticleList(page, category)
-const {articleList} = storeToRefs(articleStore)
+const {articleList, pages} = storeToRefs(articleStore)
 </script>

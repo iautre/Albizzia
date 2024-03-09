@@ -51,11 +51,10 @@ export default defineNuxtConfig({
   nitro: {
     devProxy: {
       "/api": {
-        target: 'https://autre.cn/',
+        target: 'https://gateway.autre.cn',
         prependPath: true,
         changeOrigin: true,
       }
-
     }
   },
   build: {

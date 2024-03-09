@@ -33,7 +33,6 @@
 </template>
 
 <script setup lang="ts">
-import {NButton, NIcon, NSpace} from 'naive-ui'
 
 import type {Category, Tag} from "~/api";
 import {
@@ -43,7 +42,7 @@ import {
 
 const {timeUnixStr, categories, tags} = defineProps(
     {
-      timeUnixStr: {type: String, default: '0'},
+      timeUnixStr: {type: String, default: '2024-01-01'},
       categories: {type: Array , default: ()=>[]},
       tags: {type: Array , default: ()=>[]},
       gps: {type: String, default: null}

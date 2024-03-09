@@ -1,9 +1,11 @@
 //公共参数
 
 const requestParams = {
-    baseURL:"https://autre.cn/api",
+    baseURL:"https://gateway.autre.cn/api/console",
     method:"get",
-    headers:{},
+    headers:{
+        "atoken": "fda035660ab14e7d92f8f332b1c5b7361"
+    },
     // // 请求拦截
     // onRequest({ request, options }) {},
     // // 请求错误

@@ -1,9 +1,8 @@
 <template>
-  <n-time :time="Number(timeUnixStr)"  type="relative" :unix="true" />
+  <n-time :time="new Date(timeUnixStr)"  type="relative"  />
 </template>
 
 <script setup lang="ts">
-import {NTime} from 'naive-ui'
 
 const {timeUnixStr} = defineProps({timeUnixStr:{type:String, default: '0'}})
 

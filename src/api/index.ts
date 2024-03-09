@@ -34,20 +34,20 @@ export interface Thumb {
     firstimg: string
 }
 export const articlePage = async (params:any)=>{
-    return await request<Array<Article>>("/posts", {params:params})
+    return await request<PageModel<Article>>("/content/public/posts", {params:params})
 }
 export const getArticle = async (slug:string)=>{
-    return await request<Article>(`/post?slug=${slug}`)
+    return await request<Article>(`/content/public/post?slug=${slug}`)
 }
 export const getCategories= async ()=>{
-    return await request<Array<Category>>(`/categories`)
+    return await request<Array<Category>>(`/content/public/categories`)
 }
 export const getTags = async ()=>{
-    return await request<Array<Tag>>(`/tags`)
+    return await request<Array<Tag>>(`/content/public/tags`)
 }
 export const getCategory = async (slug:string)=>{
-    return await request<Category>(`/category?slug=${slug}`)
+    return await request<Category>(`/content/public/category?slug=${slug}`)
 }
 export const getTag = async (name:string)=>{
-    return await request<Tag>(`/tag?name=${name}`)
+    return await request<Tag>(`/content/public/tag?name=${name}`)
 }

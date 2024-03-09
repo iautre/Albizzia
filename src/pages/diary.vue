@@ -2,7 +2,7 @@
   <div>
     <NuxtLayout diary title="说说">
       <div class="top-top">
-        <n-card content-style="padding: 0 20px;" style="--n-border-color:none;">
+        <n-card content-style="padding: 0" style="--n-border-color:none;">
           <template #cover>
             <div class="diary-top-header" style="position: absolute;width: 100%;">
               <MenuDrawer />
@@ -16,6 +16,7 @@
                 src="https://p1.imoxin.net/633fd686b8de3c83d51724fa/1!post"
             />
           </template>
+          <div class="diary-content">
           <n-list>
             <n-list-item v-for="item in articleList" :key="item.cid">
               <n-thing :title="item.title">
@@ -26,6 +27,7 @@
               </n-thing>
             </n-list-item>
           </n-list>
+          </div>
         </n-card>
       </div>
     </NuxtLayout>
@@ -52,6 +54,10 @@ const {articleList} = storeToRefs(aritcleStore)
 @media screen and (max-width: 720px) {
   .top-top .diary-top-img {
     border-radius: 0!important;
+  }
+  .top-top .diary-content{
+    margin-right: 20px;
+    margin-left: 20px;
   }
 }
 

@@ -16,6 +16,7 @@ import {
 export const useArticleStore = defineStore('ArticleData', () => {
 
   const articleList = ref<Array<Article>>([])
+  const pages = ref<Number>(0)
   const articleData = ref<Article>()
   const tags = ref<Array<Tag>>([])
   const categories = ref<Array<Category>>([])
@@ -23,8 +24,9 @@ export const useArticleStore = defineStore('ArticleData', () => {
   const category = ref<Category>()
 
   const getArticleList = async (page=1, category:string|undefined) => {
-    const list = await articlePage({page:page, category: category})
-    articleList.value = list || []
+    const res = await articlePage({current: page, category: category})
+    pages.value = res.pages
+    articleList.value = res.records || []
   }
   const getArticleData = async (slug:string) => {
       const data = await getArticle(slug)
@@ -46,7 +48,7 @@ export const useArticleStore = defineStore('ArticleData', () => {
   }
 
   return {
-    articleList, articleData, tag, category, tags, categories,
+    articleList, pages, articleData, tag, category, tags, categories,
     getArticleList, getArticleData,getTagList, getCategoryList,getTagData, getCategoryData
   }
 })

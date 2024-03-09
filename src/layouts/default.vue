@@ -27,7 +27,7 @@
                 <slot/>
               </n-layout-content>
               <n-layout-sider class="right-sider"
-                              style="width: 300px;max-width: 300px;margin:12px 12px 12px 0;"
+                              style="width: 300px;max-width: 300px;margin:12px 20px 12px 0;"
                               >
                 <Sider/>
               </n-layout-sider>

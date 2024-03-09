@@ -1,7 +1,7 @@
 <template>
   <div>
   <NuxtLayout :title="!articleData ? '404' : articleData.title">
-    <div style="margin: 12px;">
+    <div style="margin: 12px 20px;">
     <n-result v-if="!articleData" status="404" title="404 资源不存在" description="生活总归带点荒谬" style="margin-top: 20px;">
       <template #footer>
         <NuxtLink to="/">

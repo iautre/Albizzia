@@ -19,16 +19,13 @@ export interface Article {
     text2: string,
     views: number,
     categories: Array<Category>,
-    tag:Array<Tag>,
+    tags:Array<string>,
     thumb: Thumb,
     imgs: Array<string>
 }
 export interface Category {
     name:string,
     slug:string,
-}
-export interface Tag {
-    name:string
 }
 export interface Thumb {
     firstimg: string
@@ -43,11 +40,11 @@ export const getCategories= async ()=>{
     return await request<Array<Category>>(`/content/public/categories`)
 }
 export const getTags = async ()=>{
-    return await request<Array<Tag>>(`/content/public/tags`)
+    return await request<Array<string>>(`/content/public/tags`)
 }
 export const getCategory = async (slug:string)=>{
     return await request<Category>(`/content/public/category?slug=${slug}`)
 }
 export const getTag = async (name:string)=>{
-    return await request<Tag>(`/content/public/tag?name=${name}`)
+    return await request<string>(`/content/public/tag?name=${name}`)
 }

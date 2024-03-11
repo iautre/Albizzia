@@ -22,7 +22,6 @@
 </template>
 <script lang="ts" setup>
 import {NMenu, NDivider, NAvatar, NSpace} from 'naive-ui'
-import type {MenuOption} from 'naive-ui'
 const {mode} = defineProps({
   mode:{type: String, default: 'vertical'}
 })

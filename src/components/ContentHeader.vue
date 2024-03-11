@@ -18,8 +18,8 @@
       <template #icon>
         <n-icon :component="PricetagsOutline"></n-icon>
       </template>
-      <template v-for="(tag, index) in tags" :key="tag.name">
-        {{ index !== 0 ? ' ' + tag.name : tag.name }}
+      <template v-for="(tag, index) in tags" :key="tag">
+        {{ index !== 0 ? ' ' + tag : tag }}
       </template>
     </n-button>
     <n-button text v-if="gps">
@@ -34,7 +34,6 @@
 
 <script setup lang="ts">
 
-import type {Category, Tag} from "~/api";
 import {
   LocationOutline,
   PricetagsOutline, ReorderFourOutline, TodayOutline,

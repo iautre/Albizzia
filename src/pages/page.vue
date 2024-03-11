@@ -20,7 +20,7 @@
               </NuxtLink>
             </template>
             <template #description>
-              <ContentHeader :timeUnixStr="item.created" :categories="item.categories" :tags="item.tag" :gps="item.thumb?.gps"/>
+              <ContentHeader :timeUnixStr="item.created" :categories="item.categories" :tags="item.tags" :gps="item.thumb?.gps"/>
             </template>
             <n-ellipsis :line-clamp="2" :tooltip="false" style="width: 100%;">
               <MarkdownText :text="item.text"/>

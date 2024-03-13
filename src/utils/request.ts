@@ -1,7 +1,7 @@
 //公共参数
 
 const requestParams = {
-    baseURL:"https://gateway.autre.cn/api/console",
+    baseURL: import.meta.env.VITE_API_BASE_URL,
     method:"get",
     headers:{
         "atoken": "fda035660ab14e7d92f8f332b1c5b7361"

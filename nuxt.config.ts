@@ -41,6 +41,7 @@ export default defineNuxtConfig({
   },
   css: [
     '@/assets/css/main.css',
+    '@/assets/css/github.css',
   ],
   plugins: [
 
@@ -51,7 +52,7 @@ export default defineNuxtConfig({
   nitro: {
     devProxy: {
       "/api": {
-        target: 'https://gateway.autre.cn',
+        target: import.meta.env.VITE_API_BASE_URL,
         prependPath: true,
         changeOrigin: true,
       }

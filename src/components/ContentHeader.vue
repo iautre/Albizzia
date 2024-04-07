@@ -1,31 +1,18 @@
 <template>
   <n-space>
-    <n-button text style="margin-right: 10px;">
-      <template #icon>
-        <n-icon :component="TodayOutline"></n-icon>
-      </template>
+    <n-button text size="small">
       <DateTimeFormat :timeUnixStr="timeUnixStr"/>
     </n-button>
-    <n-button text style="margin-right: 10px;">
-      <template #icon>
-        <n-icon :component="ReorderFourOutline"></n-icon>
-      </template>
-      <template v-for="(category, index) in categories" :key="category.cid">
-        {{ index !== 0 ? ' ' + category.name : category.name}}
-      </template>
+    <n-button text size="small" v-for="(category, index) in categories" :key="category.slug">
+      <router-link :to="'/topic/'+category.slug">{{ category.name}}</router-link>
     </n-button>
-    <n-button text v-if="tags && tags.length > 0">
-      <template #icon>
-        <n-icon :component="PricetagsOutline"></n-icon>
-      </template>
-      <template v-for="(tag, index) in tags" :key="tag">
+    <n-button text size="small"  v-for="(tag, index) in tags" :key="tag">
         {{ index !== 0 ? ' ' + tag : tag }}
-      </template>
     </n-button>
-    <n-button text v-if="gps">
-      <template #icon>
-        <n-icon :component="LocationOutline"></n-icon>
-      </template>
+    <n-button text size="small" v-if="gps">
+<!--      <template #icon>-->
+<!--        <n-icon :component="LocationOutline"></n-icon>-->
+<!--      </template>-->
       {{gps}}
     </n-button>
 

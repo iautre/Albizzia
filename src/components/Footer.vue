@@ -9,7 +9,7 @@
       <img src="https://img.static.autre.cn/postcard/img/beian.png" style="width: 20px; vertical-align: middle; display: inherit;">
       陕公网安备61012402000254号
     </a>
-    <NuxtLink to="/partner" >友友们</NuxtLink>
+    <NuxtLink to="/links" >友链</NuxtLink>
   </n-space>
 </template>
 <script lang="ts" setup>

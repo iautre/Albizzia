@@ -52,7 +52,7 @@ export default defineNuxtConfig({
   nitro: {
     devProxy: {
       "/api": {
-        target: import.meta.env.VITE_API_BASE_URL,
+        target: 'https://gateway.autre.cn',
         prependPath: true,
         changeOrigin: true,
       }

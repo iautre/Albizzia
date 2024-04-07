@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLayout diary title="说说">
+    <NuxtLayout diary title="说说" keywords="说说">
       <div class="top-top">
         <n-card content-style="padding: 0" style="--n-border-color:none;">
           <template #cover>

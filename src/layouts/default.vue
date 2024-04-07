@@ -2,7 +2,8 @@
   <div>
   <Head>
     <Title>{{ title? title + ' - 有风小站' : '有风小站' }}</Title>
-    <Meta name="description" :content="title"/>
+    <Meta name="description" :content="title? title: '有风小站'"/>
+    <Meta name="keywords" :content="keywordsStr"/>
   </Head>
   <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
       <n-scrollbar style="height: 100vh;">
@@ -49,12 +50,14 @@ import {
 } from 'naive-ui'
 import {EarthOutline} from '@vicons/ionicons5'
 import {storeToRefs} from 'pinia'
-const {diary} = defineProps({
+const {diary, keywords, title} = defineProps({
   title: {type: String, default: null},
+  keywords: {type: Array , default: ['有风小站']},
   diary: {type: Boolean, default: false}
 })
 // const {large, medium, small, spin} = storeToRefs(useStore.useScreenStore())
 const mainContainerRef = ref<HTMLElement | undefined>(undefined)
+const keywordsStr = computed<string>(()=>keywords ? keywords.toString()+",有风小站" : "有风小站")
 </script>
 <style scoped>
 @media screen and (min-width: 1024px){

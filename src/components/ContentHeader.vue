@@ -1,20 +1,18 @@
 <template>
   <n-space>
-    <n-button-group>
-    <n-button :bordered="false" size="small" style="padding-left: 0">
-      <DateTimeFormat :timeUnixStr="timeUnixStr"/>
-    </n-button>
-    <n-button :bordered="false" size="small" v-if="gps"  style="padding-left: 0">
-      <!--      <template #icon>-->
-      <!--        <n-icon :component="LocationOutline"></n-icon>-->
-      <!--      </template>-->
-      {{gps}}
-    </n-button>
-    </n-button-group>
-    <n-button round size="small" v-for="(category, index) in categories" :key="category.slug">
+      <n-button text size="small" style="line-height: 24px;color:#5c5a5a;">
+        <DateTimeFormat :timeUnixStr="timeUnixStr"/>
+      </n-button>
+      <n-button text size="small" v-if="gps"  style="line-height: 24px;color:#5c5a5a;">
+        <!--      <template #icon>-->
+        <!--        <n-icon :component="LocationOutline"></n-icon>-->
+        <!--      </template>-->
+        {{gps}}
+      </n-button>
+    <n-button round size="small" v-for="(category, index) in categories" :key="category.slug" style="height: 24px;padding: 0 10px;color:#5c5a5a;">
       <router-link :to="'/topic/'+category.slug">{{ category.name}}</router-link>
     </n-button>
-    <n-button round dashed size="small"  v-for="(tag, index) in tags" :key="tag">
+    <n-button round dashed size="small"  v-for="(tag, index) in tags" :key="tag" style="height: 24px;padding: 0 10px;color:#5c5a5a;">
         {{ index !== 0 ? ' ' + tag : tag }}
     </n-button>
   </n-space>

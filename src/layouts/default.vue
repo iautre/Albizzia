@@ -52,7 +52,7 @@ import {EarthOutline} from '@vicons/ionicons5'
 import {storeToRefs} from 'pinia'
 const {diary, keywords, title} = defineProps({
   title: {type: String, default: null},
-  keywords: {type: Array , default: ['有风小站']},
+  keywords: {type: Array , default: ()=>['有风小站']},
   diary: {type: Boolean, default: false}
 })
 // const {large, medium, small, spin} = storeToRefs(useStore.useScreenStore())

@@ -1,14 +1,16 @@
 <template>
   <n-space>
-    <n-button :bordered="false" size="small">
+    <n-button-group>
+    <n-button :bordered="false" size="small" style="padding-left: 0">
       <DateTimeFormat :timeUnixStr="timeUnixStr"/>
     </n-button>
-    <n-button :bordered="false" size="small" v-if="gps">
+    <n-button :bordered="false" size="small" v-if="gps"  style="padding-left: 0">
       <!--      <template #icon>-->
       <!--        <n-icon :component="LocationOutline"></n-icon>-->
       <!--      </template>-->
       {{gps}}
     </n-button>
+    </n-button-group>
     <n-button round size="small" v-for="(category, index) in categories" :key="category.slug">
       <router-link :to="'/topic/'+category.slug">{{ category.name}}</router-link>
     </n-button>

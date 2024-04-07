@@ -5,7 +5,6 @@ import {
   getArticle,
   PageModel,
   Article,
-  Tag,
   Category,
   getTag,
   getCategory,
@@ -18,9 +17,9 @@ export const useArticleStore = defineStore('ArticleData', () => {
   const articleList = ref<Array<Article>>([])
   const pages = ref<Number>(0)
   const articleData = ref<Article>()
-  const tags = ref<Array<Tag>>([])
+  const tags = ref<Array<string>>([])
   const categories = ref<Array<Category>>([])
-  const tag = ref<Tag>()
+  const tag = ref<string>()
   const category = ref<Category>()
 
   const getArticleList = async (page=1, category:string|undefined) => {

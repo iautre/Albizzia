@@ -14,7 +14,7 @@
         {{ articleData.title }}
       </template>
       <template v-if="articleData.type === 'post'" #description>
-        <ContentHeader :timeUnixStr="articleData.created" :categories="articleData.categories" :tags="articleData.tags" :gps="articleData.thumb?.gps" />
+        <ContentHeader :timeUnixStr="articleData.created" :categories="articleData.categories" :tags="articleData.tags" :gps="articleData.gps" />
        </template>
       <MarkdownText :text="articleData.text" />
     </n-thing>

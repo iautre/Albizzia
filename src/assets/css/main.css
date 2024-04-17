@@ -23,6 +23,9 @@ img {
     margin-top: 8px;
     margin-bottom: 8px;
 }
+.n-image-preview-container .n-image-preview-wrapper .n-image-preview {
+    object-fit: contain;
+}
 video {
     width: 100%;
 }

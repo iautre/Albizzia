@@ -83,7 +83,7 @@ export default defineComponent({
         // let vnode = vueParser.parse(lexer.lex(props.text))
         // return h('div', vnode)
         return (
-            <div class={"content-text"} v-html={props.text} ></div>
+            <div  v-html={props.text} ></div>
         )
     }
 })

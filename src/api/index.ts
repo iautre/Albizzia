@@ -21,7 +21,7 @@ export interface Article {
     categories: Array<Category>,
     tags:Array<string>,
     thumb: Thumb,
-    imgs: Array<string>
+    thumbs: Array<string>
     gps: string,
 }
 export interface Category {

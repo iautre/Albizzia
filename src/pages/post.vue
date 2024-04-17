@@ -16,7 +16,18 @@
       <template v-if="articleData.type === 'post'" #description>
         <ContentHeader :timeUnixStr="articleData.created" :categories="articleData.categories" :tags="articleData.tags" :gps="articleData.gps" />
        </template>
-      <MarkdownText :text="articleData.text" />
+      <div class="content-text">
+        <n-image-group>
+        <template v-for="(item, index) in articleData.thumbs" :key="index">
+          <MarkdownText v-if="!item.url" :text="item.text" />
+          <template v-else >
+            <n-image lazy object-fit="contain" :src="item.url" :alt="item.alt" :previewed-img-props="{ style: { 'object-fit': 'contain'} }"/>
+            <n-flex justify="center"><n-gradient-text type="warning">{{item.alt}}</n-gradient-text></n-flex>
+          </template>
+        </template>
+        </n-image-group>
+      </div>
+
     </n-thing>
     </div>
   </NuxtLayout>

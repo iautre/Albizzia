@@ -5,7 +5,7 @@
         <n-card content-style="padding: 0" style="--n-border-color:none;">
           <template #cover>
             <div class="diary-top-header" style="position: absolute;width: 100%;">
-              <MenuDrawer />
+              <MenuDrawer/>
               <n-divider style="margin: 0;--n-color: #b3b0b0ba"/>
             </div>
             <img
@@ -17,16 +17,31 @@
             />
           </template>
           <div class="diary-content">
-          <n-list>
-            <n-list-item v-for="item in articleList" :key="item.cid">
-              <n-thing :title="item.title">
-                <template #header-extra>
-                  <DateTimeFormat :timeUnixStr="item.created"/>
-                </template>
-                <MarkdownText :text="item.text"/>
-              </n-thing>
-            </n-list-item>
-          </n-list>
+            <n-list>
+              <n-list-item v-for="item in articleList" :key="item.cid">
+                <n-thing :title="item.title">
+                  <template #header-extra>
+                    <DateTimeFormat :timeUnixStr="item.created"/>
+                  </template>
+                  <div class="content-text">
+                    <n-ellipsis expand-trigger="click" line-clamp="2" :tooltip="false">
+                      <n-image-group>
+                        <template v-for="(item, index) in item.thumbs" :key="index">
+                          <MarkdownText v-if="!item.url" :text="item.text"/>
+                          <template v-else>
+                            <n-image lazy object-fit="contain" :src="item.url" :alt="item.alt"
+                                     :previewed-img-props="{ style: { 'object-fit': 'contain'} }"/>
+                            <n-flex justify="center">
+                              <n-gradient-text type="warning">{{ item.alt }}</n-gradient-text>
+                            </n-flex>
+                          </template>
+                        </template>
+                      </n-image-group>
+                    </n-ellipsis>
+                  </div>
+                </n-thing>
+              </n-list-item>
+            </n-list>
           </div>
         </n-card>
       </div>
@@ -53,19 +68,21 @@ const {articleList} = storeToRefs(aritcleStore)
 <style scoped>
 @media screen and (max-width: 720px) {
   .top-top .diary-top-img {
-    border-radius: 0!important;
+    border-radius: 0 !important;
   }
-  .top-top .diary-content{
+
+  .top-top .diary-content {
     margin-right: 20px;
     margin-left: 20px;
   }
 }
 
-@media screen and (min-width: 720px){
-  .diary-top-header{
+@media screen and (min-width: 720px) {
+  .diary-top-header {
     display: none;
   }
-  .top-top{
+
+  .top-top {
     margin: 12px 20px;
   }
 }

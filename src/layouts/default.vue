@@ -6,7 +6,7 @@
     <Meta name="keywords" :content="keywordsStr"/>
   </Head>
   <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
-      <n-scrollbar style="height: 100vh;">
+<!--      <n-scrollbar style="height: 100vh;">-->
         <div ref="mainContainerRef">
           <n-layout style="max-width: 1200px;width:100%;margin: 0 auto;min-height:calc(100vh - 74px)">
             <n-layout-header :class="diary ? 'top-header diary-top-header' : 'top-header'">
@@ -39,7 +39,7 @@
           </n-layout-footer>
           <n-back-top :right="100"/>
         </div>
-      </n-scrollbar>
+<!--      </n-scrollbar>-->
   </n-config-provider>
   </div>
 </template>

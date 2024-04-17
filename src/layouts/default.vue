@@ -1,8 +1,8 @@
 <template>
   <div>
   <Head>
-    <Title>{{ title? title + ' - 有风小站' : '有风小站' }}</Title>
-    <Meta name="description" :content="title? title: '有风小站'"/>
+    <Title>{{ title? title + ' - 有风小站' : '有风小站 - 记录生活点滴，分享好玩有趣' }}</Title>
+    <Meta name="description" :content="title? title: '有风小站-记录生活点滴，分享好玩有趣'"/>
     <Meta name="keywords" :content="keywordsStr"/>
   </Head>
   <n-config-provider :locale="zhCN" :date-locale="dateZhCN">

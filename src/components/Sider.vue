@@ -8,20 +8,20 @@
       >
         <NuxtLink to="/my-biaoben"><img
             class="carousel-img"
-            src="https://p1.imoxin.net/633fe4932c81eb8bdd568a42/1!post"
+            src="https://p1.imoxin.net/e47a5b20399177ad04fb99773ff2c768/1!post"
             alt="百花"
         ></NuxtLink>
         <NuxtLink to="/my-biaoben">
         <img
             class="carousel-img"
-            src="https://p1.imoxin.net/633fe4942c81eb8bdd568a44/1!post"
+            src="https://p1.imoxin.net/4f37a7522be9c458050772cfb6ce0475/1!post"
             alt="标本"
         >
         </NuxtLink>
         <NuxtLink to="/my-biaoben">
         <img
             class="carousel-img"
-            src="https://p1.imoxin.net/633fe4952c81eb8bdd568a46/1!post"
+            src="https://p1.imoxin.net/c2c1ed270c4f4819fc68b227fc5e9274/1!post"
             alt="标本"
         >
         </NuxtLink>
@@ -34,13 +34,13 @@
         >
           <NuxtLink to="/100flower"><img
               class="carousel-img"
-              src="https://p1.imoxin.net/633fd616b8de3c83d517238a/1!post"
+              src="https://p1.imoxin.net/affd5d27258b4afb4e10dd05adb957d7/1!post"
               alt="百花"
           ></NuxtLink>
           <NuxtLink to="/100flower">
             <img
                 class="carousel-img"
-                src="https://p1.imoxin.net/633fd618b8de3c83d5172396/1!post"
+                src="https://p1.imoxin.net/c3075e9110677bd908da808a172e568e/1!post"
                 alt="百花"
             >
           </NuxtLink>
@@ -49,7 +49,7 @@
       <n-image
           :preview-disabled="true"
           width="300"
-          src="https://p1.imoxin.net/634c2a6fcbc9e0b3e5d34a8b/1!post"
+          src="https://p1.imoxin.net/e7095f48d3f02396d8a900ba0c729af4/1!post"
       />
     </NuxtLink>
 <!--    <NuxtLink to="/my-biaoben">-->

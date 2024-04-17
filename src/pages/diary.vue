@@ -13,7 +13,7 @@
                 height="240"
                 width="100%"
                 class="carousel-img diary-top-img"
-                src="https://p1.imoxin.net/633fd686b8de3c83d51724fa/1!post"
+                src="https://p1.imoxin.net/6f9ba8ed7072907afac888b7ce2c181c/1!post"
             />
           </template>
           <div class="diary-content">

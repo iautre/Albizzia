@@ -21,10 +21,15 @@ export default defineNuxtConfig({
       meta: [
         // <meta name="description" content="My amazing site">
         { name: 'description', content: '有风小站.' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'}
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'},
+        { name: 'google-adsense-account', content: 'ca-pub-7180931165350205'}
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ],
+      script: [
+        {src: 'https://hm.baidu.com/hm.js?cde2381539508af2f6b075e992c61cae'},
+        {async: true, src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7180931165350205', crossorigin: 'anonymous'}
       ]
     },
     pageTransition: {
@@ -44,7 +49,6 @@ export default defineNuxtConfig({
     '@/assets/css/github.css',
   ],
   plugins: [
-
   ],
   eslint: {
     /* module options */

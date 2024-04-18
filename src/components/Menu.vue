@@ -13,11 +13,11 @@
 <!--    </n-space>-->
 <!--  </n-space>-->
 <!--  </NuxtLink>-->
-  <NuxtLink to="/">
+  <a href="/">
     <n-space style="padding-left: 38px;padding-bottom: 12px;">
       <MenuTitle />
     </n-space>
-  </NuxtLink>
+  </a>
 <!--  <n-divider style="margin: 0 32px 0"></n-divider>-->
   <n-menu :options="menuOptions" :mode="mode" :style="mode === 'vertical' ? 'width: 200px;' : ''"/>
   </div>
@@ -27,8 +27,6 @@ import {NMenu, NDivider, NAvatar, NSpace} from 'naive-ui'
 const {mode} = defineProps({
   mode:{type: String, default: 'vertical'}
 })
-
-import {NuxtLink} from '#components'
 import MenuTitle from '~/components/MenuTitle.vue'
 
 // import {menuOptions} from '~/composables/menus'

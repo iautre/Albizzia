@@ -44,4 +44,10 @@ export default <RouterConfig>{
             props: true,
         },
     ],
+    scrollBehavior(to, from, savedPosition) {
+        return {
+            el: to.hash,
+            behavior: 'smooth',
+        };
+    },
 };

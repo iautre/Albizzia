@@ -7,25 +7,25 @@
           mousewheel
           style="width: 100%;height: 240px;margin-bottom: 6px;"
       >
-        <NuxtLink to="/my-biaoben"><img
+        <a href="/my-biaoben"><img
             class="carousel-img"
             src="https://p1.imoxin.net/e47a5b20399177ad04fb99773ff2c768/1!post"
             alt="百花"
-        ></NuxtLink>
-        <NuxtLink to="/my-biaoben">
+        ></a>
+        <a href="/my-biaoben">
           <img
               class="carousel-img"
               src="https://p1.imoxin.net/4f37a7522be9c458050772cfb6ce0475/1!post"
               alt="标本"
           >
-        </NuxtLink>
-        <NuxtLink to="/my-biaoben">
+        </a>
+        <a href="/my-biaoben">
           <img
               class="carousel-img"
               src="https://p1.imoxin.net/c2c1ed270c4f4819fc68b227fc5e9274/1!post"
               alt="标本"
           >
-        </NuxtLink>
+        </a>
       </n-carousel>
       <n-carousel
           direction="vertical"
@@ -33,18 +33,18 @@
           mousewheel
           style="width: 100%;height: 240px;margin-bottom: 6px;"
       >
-        <NuxtLink to="/100flower"><img
+        <a href="/100flower"><img
             class="carousel-img"
             src="https://p1.imoxin.net/affd5d27258b4afb4e10dd05adb957d7/1!post"
             alt="百花"
-        ></NuxtLink>
-        <NuxtLink to="/100flower">
+        ></a>
+        <a href="/100flower">
           <img
               class="carousel-img"
               src="https://p1.imoxin.net/c3075e9110677bd908da808a172e568e/1!post"
               alt="百花"
           >
-        </NuxtLink>
+        </a>
       </n-carousel>
       <!--        <NuxtLink to="/topic/pai">-->
       <!--          <n-image-->

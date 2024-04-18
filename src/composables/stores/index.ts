@@ -4,7 +4,7 @@ import {useScreenStore} from './screen'
 //模块
 const stores = {
     useArticleStore,
-    useScreenStore
+    useScreenStore,
 }
 
 export default stores

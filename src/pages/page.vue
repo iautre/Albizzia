@@ -5,19 +5,19 @@
       <n-list>
         <n-empty v-if="articleList.length === 0" description="你什么也找不到" style="margin-top: 100px;;">
           <template #extra>
-            <NuxtLink to="/">
+            <a href="/">
               <n-button size="small">
                 看看别的
               </n-button>
-            </NuxtLink>
+            </a>
           </template>
         </n-empty>
         <n-list-item v-if="articleList.length > 0" v-for="(item, index) in articleList" :key="item.cid">
           <n-thing content-style="margin-top:0;">
             <template #header>
-              <NuxtLink :to="'/'+item.slug">
+              <a :href="'/'+item.slug">
                 {{ item.title }}
-              </NuxtLink>
+              </a>
             </template>
             <template #description>
               <ContentHeader :timeUnixStr="item.created" :categories="item.categories" :tags="item.tags" :gps="item.gps"/>
@@ -29,16 +29,16 @@
         </n-list-item>
         <template #footer>
           <n-space justify="center">
-            <NuxtLink v-if="page>1" :to="(category ? '/topic/' + category + '/' : '/page/')+ (Number(page) - 1)">
+            <a v-if="page>1" :href="(category ? '/topic/' + category + '/' : '/page/')+ (Number(page) - 1)">
               <n-button round>
                 上一页
               </n-button>
-            </NuxtLink>
-            <NuxtLink v-if="page < pages" :to="(category ? '/topic/' + category + '/' : '/page/')+ (Number(page) + 1)">
+            </a>
+            <a v-if="page < pages" :href="(category ? '/topic/' + category + '/' : '/page/')+ (Number(page) + 1)">
               <n-button round>
                 下一页
               </n-button>
-            </NuxtLink>
+            </a>
           </n-space>
         </template>
       </n-list>

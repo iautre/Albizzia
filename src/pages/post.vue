@@ -5,9 +5,9 @@
         <n-result v-if="!articleData" status="404" title="404 资源不存在" description="生活总归带点荒谬"
                   style="margin-top: 20px;">
           <template #footer>
-            <NuxtLink to="/">
+            <a href="/">
               <n-button>找点乐子吧</n-button>
-            </NuxtLink>
+            </a>
           </template>
         </n-result>
         <n-thing v-if="articleData" style="margin-top: 12px; width: 100%;">

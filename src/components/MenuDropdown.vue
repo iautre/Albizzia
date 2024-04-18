@@ -1,11 +1,11 @@
 <template>
   <div >
   <n-space justify="space-between" style="margin-bottom: 0;padding-bottom: 0;">
-    <NuxtLink to="/">
+    <a href="/">
       <n-button text style="margin: 12px 12px;">
         <MenuTitle />
     </n-button>
-  </NuxtLink>
+  </a>
   <n-dropdown
       :options="menus"
       placement="bottom-end"
@@ -43,7 +43,7 @@ const renderIcon = (icon: Component) => {
   return () => h(NIcon, null, {default: () => h(icon)})
 }
 const renderLabelN = (label: string, path: string) => {
-  return () => h(NuxtLink, {to: path}, {default: () => label})
+  return () => h('a', {href: path}, {default: () => label})
 }
 const menus: MenuOption[] = [
   {

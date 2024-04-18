@@ -11,7 +11,7 @@ const renderIcon = (icon: Component) => {
     return () => h(NIcon, null, {default: () => h(icon)})
 }
 const renderLabelN = (label: string, path: string) => {
-    return () => h(NuxtLink, {to: path}, {default: () => label})
+    return () => h('a', {href: path}, {default: () => label})
 }
 export const menuOptions :MenuOption[]=  [
         // {

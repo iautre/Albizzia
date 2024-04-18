@@ -50,11 +50,9 @@
 </template>
 <script lang="ts" setup>
 import {
-  NConfigProvider, NSpin, NIcon, NScrollbar, NLayout, NLayoutHeader, NLayoutContent,
+  NConfigProvider, NLayout, NLayoutHeader, NLayoutContent,
   NLayoutSider, NLayoutFooter, zhCN, dateZhCN, NAffix, NBackTop, NDivider, NSpace,
 } from 'naive-ui'
-import {EarthOutline} from '@vicons/ionicons5'
-import {storeToRefs} from 'pinia'
 import SiderTop from "~/components/SiderTop.vue";
 import SiderBottom from "~/components/SiderBottom.vue";
 

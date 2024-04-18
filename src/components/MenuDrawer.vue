@@ -1,11 +1,11 @@
 <template>
   <div >
     <n-space justify="space-between" style="margin-bottom: 0;padding-bottom: 0;">
-      <NuxtLink to="/">
+      <a href="/">
         <n-button text style="margin: 12px 20px;">
           <MenuTitle />
         </n-button>
-      </NuxtLink>
+      </a>
       <n-button text @click="active = true" style="margin: 12px 20px;">
         <template #icon>
           <n-icon size="26" :component="ReorderFourOutline"></n-icon>
@@ -41,7 +41,7 @@ const renderIcon = (icon: Component) => {
   return () => h(NIcon, null, {default: () => h(icon)})
 }
 const renderLabelN = (label: string, path: string) => {
-  return () => h(NuxtLink, {to: path}, {default: () => label})
+  return () => h('a', {href: path}, {default: () => label})
 }
 const menus: MenuOption[] = [
   {

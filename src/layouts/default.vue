@@ -6,8 +6,8 @@
       <Meta name="keywords" :content="keywordsStr"/>
     </Head>
     <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
-      <div ref="mainContainerRef">
-        <n-layout style="max-width: 1200px;width:100%;margin: 0 auto;min-height:calc(100vh - 74px)">
+      <div ref="mainContainerRef" style="overflow: auto;height: 100vh">
+        <n-layout style="max-width: 1200px;width:100%;margin: 0 auto;">
           <n-layout-header :class="diary ? 'top-header diary-top-header' : 'top-header'">
             <MenuDrawer/>
             <n-divider style="margin: 0;"/>
@@ -23,20 +23,27 @@
                 <Menu/>
               </n-affix>
             </n-layout-header>
-            <n-layout-content class="main-content">
+            <n-layout-content class="main-content" style="min-height:calc(100vh - 74px)">
               <slot/>
             </n-layout-content>
-            <n-layout-sider class="right-sider"
-                            style="width: 300px;max-width: 300px;margin:12px 20px 12px 0;"
-            >
-              <Sider/>
+            <n-layout-sider class="right-sider" style="width: 300px;max-width: 300px; margin:12px 20px 12px 0;">
+              <n-space vertical>
+                <SiderTop/>
+                <n-affix
+                    :trigger-top="24"
+                    :top="24"
+                    :listen-to="() => mainContainerRef"
+                >
+                  <SiderBottom/>
+                </n-affix>
+              </n-space>
             </n-layout-sider>
           </n-layout>
         </n-layout>
         <n-layout-footer>
           <Footer/>
         </n-layout-footer>
-        <n-back-top :right="100"/>
+        <n-back-top :right="80"/>
       </div>
     </n-config-provider>
   </div>
@@ -44,10 +51,12 @@
 <script lang="ts" setup>
 import {
   NConfigProvider, NSpin, NIcon, NScrollbar, NLayout, NLayoutHeader, NLayoutContent,
-  NLayoutSider, NLayoutFooter, zhCN, dateZhCN, NAffix, NBackTop, NDivider,
+  NLayoutSider, NLayoutFooter, zhCN, dateZhCN, NAffix, NBackTop, NDivider, NSpace,
 } from 'naive-ui'
 import {EarthOutline} from '@vicons/ionicons5'
 import {storeToRefs} from 'pinia'
+import SiderTop from "~/components/SiderTop.vue";
+import SiderBottom from "~/components/SiderBottom.vue";
 
 const {diary, keywords, title} = defineProps({
   title: {type: String, default: null},

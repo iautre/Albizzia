@@ -1,4 +1,5 @@
 <template>
+  <div>
 <!--  <NuxtLink to="/">-->
 <!--  <n-space justify="center" style="padding: 0 ;">-->
 <!--      <n-avatar-->
@@ -19,6 +20,7 @@
   </NuxtLink>
 <!--  <n-divider style="margin: 0 32px 0"></n-divider>-->
   <n-menu :options="menuOptions" :mode="mode" :style="mode === 'vertical' ? 'width: 200px;' : ''"/>
+  </div>
 </template>
 <script lang="ts" setup>
 import {NMenu, NDivider, NAvatar, NSpace} from 'naive-ui'

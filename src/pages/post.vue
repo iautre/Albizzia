@@ -15,7 +15,7 @@
             {{ articleData.title }}
           </template>
           <template v-if="articleData.type === 'post'" #description>
-            <ContentHeader :timeUnixStr="articleData.created" :categories="articleData.categories"
+            <ContentHeader :timeUnixStr="articleData.issued" :categories="articleData.categories"
                            :tags="articleData.tags" :gps="articleData.gps"/>
           </template>
           <div class="content-text">

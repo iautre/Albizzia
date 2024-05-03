@@ -20,7 +20,7 @@
               </a>
             </template>
             <template #description>
-              <ContentHeader :timeUnixStr="item.created" :categories="item.categories" :tags="item.tags" :gps="item.gps"/>
+              <ContentHeader :timeUnixStr="item.issued" :categories="item.categories" :tags="item.tags" :gps="item.gps"/>
             </template>
             <n-ellipsis :line-clamp="2" :tooltip="false" style="width: 100%;">
               <MarkdownText :text="item.text"/>

@@ -21,7 +21,7 @@
               <n-list-item v-for="item in articleList" :key="item.cid">
                 <n-thing :title="item.title">
                   <template #header-extra>
-                    <DateTimeFormat :timeUnixStr="item.created"/>
+                    <DateTimeFormat :timeUnixStr="item.issued"/>
                   </template>
                   <div class="content-text">
                     <n-ellipsis expand-trigger="click" line-clamp="2" :tooltip="false">

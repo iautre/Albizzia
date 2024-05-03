@@ -12,7 +12,7 @@ export interface Article {
     slug: string,
     title: string,
     path: string,
-    created: string,
+    issued: string,
     headImg?:string,
     description?:string,
     text: string,
